@@ -1,0 +1,52 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-custom">
+      <img class="img" src="/assets/Logo.png" />
+    <ul class="navbar-nav " routerLinkActive="active">
+      
+      <li class="nav-item">
+        <a href="/home" class="nav-link" routerLink="home">Home </a>
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/hager" class="nav-link" routerLink="hager">Liste Profiles</a>
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a  class="nav-link" routerLink="ajout">Ajouter Profile</a>
+      </li>
+      <li class="nav-item" *ngIf="showCollaborateurBoard">
+        <a href="/admin" class="nav-link" routerLink="admin">Demande mission</a>
+      </li>
+      <li class="nav-item" *ngIf="showCollaborateurBoard">
+        <a href="/mod" class="nav-link" routerLink="mod">Demande NDF</a>
+      </li>
+      <li class="nav-item" *ngIf="showCollaborateurBoard || showManagerBoard">
+        <a href="/admin" class="nav-link" routerLink="admin">Liste Mission</a>
+      </li>
+      <li class="nav-item" *ngIf="showCollaborateurBoard || showManagerBoard">
+        <a href="/admin" class="nav-link" routerLink="admin">Liste NDF</a>
+      </li>
+      <li class="nav-item" *ngIf="showAssistBoard">
+        <a href="/admin" class="nav-link" routerLink="admin">Reservation</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.nav-link{
+        text-decoration: none;
+        color: #1F4099;
+        line-height: 40px;
+        font-size: 1.4rem;
+        text-align: center;
+}
+.nav-item a:hover {
+        font-weight: bold;
+        color: #132350;
+}
+
+.navbar-brand
+{
+    color: #ffffff;
+    padding-right: 1%;
+    background-image: "Logo TenStep.png";
+}
+
+.navbar-custom
+{
+   /*background-color: #9d9fb3;*/
+    background: linear-gradient(to right, #4564b8, #a4abbf)
+}
+
+.img
+{
+    width: 120px;
+    padding-right: 10px;
+}

@@ -1,0 +1,153 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <source>
+</head>
+
+
+<body>
+
+  <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+    <div class="wrapper wrapper--w790">
+      <div class="card card-5">
+        <div class="card-heading">
+          <h2 class="title">Création d'un compte</h2>
+        </div>
+
+        <!--Nom-->
+        <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>            
+            <div class="card-body">
+              <div class="form-group">
+                <div class="form-row m-b-55">
+                  <label class="name" for="nom">Email</label>
+                  <div class="value">
+                    <div class="row row-space">
+                      <div class="input-group">
+                        <input type="email" class="input--style-5" name="email" [(ngModel)]="form.email" required email
+                        #email="ngModel" />
+                      <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                        <div *ngIf="email.errors.required">Email est obligatoire</div>
+                        <div *ngIf="email.errors.email">
+                          Email doit être valide
+                        </div>
+                        </div>
+            </div>
+          </div>
+          </div>
+           </div>
+
+           <!--Prénom-->
+                <div class="form-row m-b-55">
+                  <label class="name" for="nom">Prénom</label>
+                  <div class="value">
+                    <div class="row row-space">
+                      <div class="input-group">
+                  <input type="text" class="input--style-5" name="prenom" [(ngModel)]="form.prenom" required minlength="3"
+              maxlength="20" #nom="ngModel" />
+            <div class="alert-danger" *ngIf="nom.errors && f.submitted">
+              <div *ngIf="nom.errors.required">Prénom est obligatoire</div>
+              <div *ngIf="nom.errors.minlength">
+                Le prénom doit contenir au minimum 3 caractères
+              </div>
+            </div>
+            </div>
+          </div>
+          </div>
+           </div>
+
+
+           <!--Email-->
+           <div class="form-row m-b-55">
+            <label class="name" for="email">Nom</label>
+            <div class="value">
+              <div class="row row-space">
+                <div class="input-group">
+                  <input type="text" class="input--style-5" name="nom" [(ngModel)]="form.nom" required minlength="3"
+              maxlength="20" #nom="ngModel" />
+            <div class="alert-danger" *ngIf="nom.errors && f.submitted">
+              <div *ngIf="nom.errors.required">Nom est obligatoire</div>
+              <div *ngIf="nom.errors.minlength">
+                Le nom doit contenir au minimum 3 caractères
+              </div>
+            </div>
+                  
+            </div>
+            </div>
+          </div>
+          </div>
+           
+          <!--Mot De Passe-->
+          <div class="form-row m-b-55">
+            <label for="password">Mot de passe</label>
+            <div class="value">
+              <div class="row row-space">
+                <div class="input-group">
+                  <input type="password" class="input--style-5" name="password" [(ngModel)]="form.password" required 
+                  minlength="6" #password="ngModel" />
+                  <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                    <div *ngIf="password.errors.required">Mot de passe est</div>
+                    <div *ngIf="password.errors.minlength">
+                      Mot de passe doit contenir au moins 6 caractères
+                    </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="passport">Passport</label>
+            <input type="passport" class="form-control" name="passport" [(ngModel)]="form.passport" required
+              minlength="6" #passport="ngModel" />
+            <div class="alert-danger" *ngIf="passport.errors && f.submitted">
+              <div *ngIf="passport.errors.required">Passport is required</div>
+              <div *ngIf="passport.errors.minlength">
+                Password must be at least 6 characters
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="form-row p-t-20">
+            <label class="label label--block">Rôle</label>
+            <div class="p-t-15">
+                <label class="radio-container m-r-55">Manager 
+                    <input type="radio" checked="checked" name="exist">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="radio-container">Collaborateur 
+                    <input type="radio" name="exist">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="radio-container">Gestionnaire de Paie 
+                    <input type="radio" name="exist">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="radio-container">Assistant de réservation 
+                    <input type="radio" name="exist">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="radio-container">Collaborateur 
+                    <input type="radio" name="exist">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+
+
+          <div class="form-group">
+                              <button class="btn btn--radius-2 btn--red" type="submit">Enregistrer</button>
+                          </div>
+
+
+          <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+            Echec création!<br />{{ errorMessage }}
+          </div>
+
+        <div class="alert alert-success" *ngIf="isSuccessful">
+          Création du compte avec succès!
+        </div>
+      </div>
+    </div>
