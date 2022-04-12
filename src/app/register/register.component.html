@@ -6,7 +6,6 @@
 
 
 <body>
-
   <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
     <div class="wrapper wrapper--w790">
       <div class="card card-5">
@@ -34,7 +33,7 @@
                   </div>
                   </div>
                   </div>
-                </div>
+                  </div>
                 </div>
 
            <!--Prénom-->
@@ -63,7 +62,7 @@
             <div class="value">
               <div class="row row-space">
                 <div class="input-group">
-                  <input type="email" class="input--style-5" name="email" [(ngModel)]="form.email" required email
+                  <input type="email" class="input--style-5" name="email" [(ngModel)]="form.email" required 
                   #email="ngModel" />
                 <div class="alert-danger" *ngIf="email.errors && f.submitted">
                   <div *ngIf="email.errors.required">Email est obligatoire</div>
@@ -78,11 +77,11 @@
 
           <!--Mot de passe-->
           <div class="form-row m-b-55">
-            <label class="name" for="password">Mot de passe</label>
+            <label for="passw" class="name" for="password">Mot de passe</label>
             <div class="value">
               <div class="row row-space">
                 <div class="input-group">
-                  <input type="password" class="input--style-5" name="password" [(ngModel)]="form.password" required email
+                  <input type="password" class="input--style-5" name="password" [(ngModel)]="form.password" required 
                   minlength="6" #password="ngModel" />
                 <div class="alert-danger" *ngIf="password.errors && f.submitted">
                   <div *ngIf="password.errors.required">Email est obligatoire</div>
@@ -94,7 +93,6 @@
             </div>
             </div>
           </div>
-        </div>
 
         <!--Passport-->
         <div class="form-row m-b-55">
@@ -115,12 +113,21 @@
           </div>
         </div>
 
+        <!--Role-->
+
+        <div class="form-row m-b-55">
+          <label class="name" for="role">Rôle</label>
+                <input class="input--style-6" type="number" min="2" max="5" placeholder="0">
+
+                <label class="choice-container">2. Manager</label>
+                <label class="choice-container">3. Collaborateur</label>
+                <label class="choice-container">4. Gestionnaire de Paie</label>
+                <label class="choice-container">5. Assistant de Réservation</label>
               
+        </div>
 
-
-          <div class="form-group">
-                              <button class="btn btn--radius-2 btn--red" type="submit">Enregistrer</button>
-                    
+              <button class="btn btn--radius-2 btn--red" type="submit">Enregistrer</button>
+              </div>
           <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
             Echec création!<br />{{ errorMessage }}
           </div>
@@ -128,5 +135,10 @@
         <div class="alert alert-success" *ngIf="isSuccessful">
           Création du compte avec succès!
         </div>
-          </div>
+              
+            </div>
+    </form>
       </div>
+    </div>
+  </div>   
+</body>
