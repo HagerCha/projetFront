@@ -14,7 +14,7 @@
         </div>
 
         <!--Nom-->
-        <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>            
+        <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
             <div class="card-body">
               <div class="form-group">
 
@@ -62,7 +62,7 @@
             <div class="value">
               <div class="row row-space">
                 <div class="input-group">
-                  <input type="email" class="input--style-5" name="email" [(ngModel)]="form.email" required 
+                  <input type="email" class="input--style-5" name="email" [(ngModel)]="form.email" required
                   #email="ngModel" />
                 <div class="alert-danger" *ngIf="email.errors && f.submitted">
                   <div *ngIf="email.errors.required">Email est obligatoire</div>
@@ -81,7 +81,7 @@
             <div class="value">
               <div class="row row-space">
                 <div class="input-group">
-                  <input type="password" class="input--style-5" name="password" [(ngModel)]="form.password" required 
+                  <input type="password" class="input--style-5" name="password" [(ngModel)]="form.password" required
                   minlength="6" #password="ngModel" />
                 <div class="alert-danger" *ngIf="password.errors && f.submitted">
                   <div *ngIf="password.errors.required">Email est obligatoire</div>
@@ -117,13 +117,14 @@
 
         <div class="form-row m-b-55">
           <label class="name" for="role">Rôle</label>
-                <input class="input--style-6" type="number" min="2" max="5" placeholder="0">
+          <select class="form-select" aria-label="Default select example" [(ngModel)]="form.role">
+            <option  value=manager> manager</option>
+            <option value=collaborateur> collaborateur</option>
+            <option value=paie> paie</option>
+            <option value=assist> assist</option>
+          </select>
 
-                <label class="choice-container">2. Manager</label>
-                <label class="choice-container">3. Collaborateur</label>
-                <label class="choice-container">4. Gestionnaire de Paie</label>
-                <label class="choice-container">5. Assistant de Réservation</label>
-              
+
         </div>
 
               <button class="btn btn--radius-2 btn--red" type="submit">Enregistrer</button>
@@ -135,10 +136,10 @@
         <div class="alert alert-success" *ngIf="isSuccessful">
           Création du compte avec succès!
         </div>
-              
+
             </div>
     </form>
       </div>
     </div>
-  </div>   
+  </div>
 </body>
