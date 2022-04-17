@@ -6,10 +6,10 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { DemandeMissionComponent } from './demande-mission/demande-mission.component';
 import { ListeDemandeComponent } from './liste-demande/liste-demande.component';
+import { EditMissionComponent } from './edit-mission/edit-mission.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'miss', component: DemandeMissionComponent},
   { path: 'profiles', component: BoardAdminComponent },
-  { path: 'listeM', component: ListeDemandeComponent }
+  { path: 'listeM', component: ListeDemandeComponent },
+  { path: 'editM', component: EditMissionComponent}
 ];
 
 @NgModule({

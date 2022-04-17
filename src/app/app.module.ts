@@ -16,6 +16,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { DemandeMissionComponent } from './demande-mission/demande-mission.component';
 import { ListeDemandeComponent } from './liste-demande/liste-demande.component';
+import { EditMissionComponent } from './edit-mission/edit-mission.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ListeDemandeComponent } from './liste-demande/liste-demande.component';
     BoardModeratorComponent,
     BoardUserComponent,
     DemandeMissionComponent,
-    ListeDemandeComponent
+    ListeDemandeComponent,
+    EditMissionComponent
   ],
   imports: [
     BrowserModule,
