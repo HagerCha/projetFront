@@ -1,13 +1,15 @@
 .nav-link{
         text-decoration: none;
-        color: #1F4099;
+        color: #ffffff;
         line-height: 40px;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         text-align: center;
 }
+
 .nav-item a:hover {
         font-weight: bold;
         color: #132350;
+        text-decoration: underline;
 }
 
 .navbar-brand
@@ -25,6 +27,6 @@
 
 .img
 {
-    width: 120px;
+    width: 250px;
     padding-right: 10px;
 }

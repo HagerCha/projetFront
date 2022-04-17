@@ -13,13 +13,13 @@
         <a  class="nav-link" routerLink="ajout">Ajouter Profile</a>
       </li>
       <li class="nav-item" *ngIf="showCollaborateurBoard">
-        <a href="/admin" class="nav-link" routerLink="admin">Demande mission</a>
+        <a href="/admin" class="nav-link" routerLink="miss">Demande mission</a>
       </li>
       <li class="nav-item" *ngIf="showCollaborateurBoard">
         <a href="/mod" class="nav-link" routerLink="mod">Demande NDF</a>
       </li>
       <li class="nav-item" *ngIf="showCollaborateurBoard || showManagerBoard">
-        <a href="/admin" class="nav-link" routerLink="admin">Liste Mission</a>
+        <a class="nav-link" routerLink="listeM">Liste Mission</a>
       </li>
       <li class="nav-item" *ngIf="showCollaborateurBoard || showManagerBoard">
         <a href="/admin" class="nav-link" routerLink="admin">Liste NDF</a>
