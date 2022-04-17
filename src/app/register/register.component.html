@@ -6,18 +6,18 @@
 
 
 <body>
-  <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
-    <div class="wrapper wrapper--w790">
-      <div class="card card-5">
-        <div class="card-heading">
-          <h2 class="title">Création d'un compte</h2>
-        </div>
+        <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate> 
+          <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+            <div class="wrapper wrapper--w790">
+              <div class="card card-5">
+                <div class="card-heading">
+                  <h2 class="title">Création d'un compte</h2>
+                </div>           
 
-        <!--Nom-->
-        <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>            
             <div class="card-body">
               <div class="form-group">
 
+                <!--Nom-->
                 <div class="form-row m-b-55">
                   <label class="name" for="nom">Nom</label>
                   <div class="value">
@@ -124,7 +124,7 @@
                 <label class="choice-container">4. Gestionnaire de Paie</label>
                 <label class="choice-container">5. Assistant de Réservation</label>
               
-        </div>
+            </div>
 
               <button class="btn btn--radius-2 btn--red" type="submit">Enregistrer</button>
               </div>
@@ -136,9 +136,10 @@
           Création du compte avec succès!
         </div>
               
-            </div>
-    </form>
+            </div> 
+          </div>
+        </div>
       </div>
-    </div>
-  </div>   
+    </form>
+         
 </body>

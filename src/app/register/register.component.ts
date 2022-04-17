@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     const { nom, email, password ,passport,prenom} = this.form;
 
-    this.authService.register(nom, email, password,passport,prenom).subscribe(
+    this.authService.register(nom, email, password, passport,prenom).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;
@@ -39,3 +39,4 @@ export class RegisterComponent implements OnInit {
     );
   }
 }
+ 

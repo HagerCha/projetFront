@@ -8,6 +8,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { DemandeMissionComponent } from './demande-mission/demande-mission.component';
+import { ListeDemandeComponent } from './liste-demande/liste-demande.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,9 +17,9 @@ const routes: Routes = [
   { path: 'ajout', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
-  { path: 'mod', component: BoardModeratorComponent },
+  { path: 'miss', component: DemandeMissionComponent},
   { path: 'profiles', component: BoardAdminComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'listeM', component: ListeDemandeComponent }
 ];
 
 @NgModule({
