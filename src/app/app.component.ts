@@ -30,14 +30,19 @@ export class AppComponent {
       this.showCollaborateurBoard = this.roles.includes('ROLE_COLLABORATEUR');
       this.showManagerBoard = this.roles.includes('ROLE_MANAGER');
       this.showAssistBoard = this.roles.includes('ROLE_ASSIST');
-      this.showPaieBoard = this.roles.includes('ROLE_PAIE');      
+      this.showPaieBoard = this.roles.includes('ROLE_PAIE');
 
       this.username = user.username;
     }
   }
 
-  logout(): void {
+
+
+  logout(event: MouseEvent){
+    event.preventDefault();
     this.tokenStorageService.signOut();
     window.location.reload();
+
+
   }
 }
