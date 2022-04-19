@@ -1,16 +1,16 @@
 import {Validators} from "@angular/forms";
 
 export class MissionModel {
-  id?: any;
+  idMission?: number;
 
-  nom?: any;
+  nom?: String;
 
-  passport?: any;
-  dateDeDebut?: any;
-  description?: any;
-  dateDeFin?: any;
+  passport?: String;
+  dateDeDebut?: Date;
+  description?: String;
+  dateDeFin?: Date;
 
-  pays?: any;
-  ville?: any;
-  etat?: any;
+  pays?: String;
+  ville?: String;
+  etat?: String;
 }

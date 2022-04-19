@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 
-import { Observable } from 'rxjs';
+import {Observable, throwError} from 'rxjs';
+import {catchError} from "rxjs/operators";
+import {MissionModel} from "../models/mission.model";
 const API_URL = 'http://localhost:8086/api/mission/';
 const TOKEN_KEY = 'auth-token';
 
@@ -44,10 +46,21 @@ export class DemandeMissionService {
       datefin: concour.datefin,
       iduser : concour.iduser,
     }, httpOptions);
+  }*/
+
+
+
+
+
+
+
+
+
+
+  delete(idMission:any) {
+    return this.http.delete(`${API_URL + 'DeleteMission'}/${idMission}`,this.httpOptions);
+
   }
 
-  delete(id) {
-    return this.http.delete(`${this.API_URLl + 'delete'}/${id}`);
 
-  }*/
 }
