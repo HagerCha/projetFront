@@ -6,6 +6,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MissionModel} from "../models/mission.model";
 import Swal from "sweetalert2";
 import {Router} from "@angular/router";
+import { timer } from 'rxjs';
+import swal from 'sweetalert';
 
 
 
@@ -26,10 +28,6 @@ export class DemandeMissionComponent implements OnInit {
 
   }
 
-
-
-
-
   ngOnInit(): void {
 
    this.basicForm = this.formbuilder.group({
@@ -42,12 +40,7 @@ export class DemandeMissionComponent implements OnInit {
 
       pays: [null, Validators.required],
       ville: [null, Validators.required],
-      etat: [null, Validators.required],
-
-
-
-
-
+      etat: ['en attend', Validators.required],
 
   })
 
@@ -65,6 +58,8 @@ export class DemandeMissionComponent implements OnInit {
       pays: this.basicForm.value.pays,
       ville: this.basicForm.value.ville,
       etat: this.basicForm.value.etat,
+     
+
 
 
     }
@@ -73,22 +68,18 @@ export class DemandeMissionComponent implements OnInit {
         console.log('melekaddd', data);
 
       });
-    Swal.fire(
-      'ajouter',
-      'Mission supprimé avec succès',
-      'success'
-    );
-    window.location.reload();
+      swal({
+        icon: "success",
+      }).then(() => {
+        window.location.reload();
+    })
+
+
+
+      
+
+  
 
   }
-
-
-
-
-
-
-
-
-
-
+     
 }

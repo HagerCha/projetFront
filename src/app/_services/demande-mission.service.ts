@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from 'rxjs';
 import {catchError} from "rxjs/operators";
 import {MissionModel} from "../models/mission.model";
+import { Params } from '@angular/router';
 const API_URL = 'http://localhost:8086/api/mission/';
 const TOKEN_KEY = 'auth-token';
 
@@ -39,19 +40,25 @@ export class DemandeMissionService {
       etat:mission.etat
     }, this.httpOptions);
   }
- /* update(id , concour): Observable<any> {
-    return this.http.put(`${API_URL + 'update'}/${id}`, {
-      name: concour.name,
-      datedebut: concour.datedebut,
-      datefin: concour.datefin,
-      iduser : concour.iduser,
-    }, httpOptions);
-  }*/
 
 
+  findById(idMission:any): Observable<any> {
+    return this.http.get(`${API_URL + 'MissionByIdUser'}/${idMission}`,this.httpOptions);
+  }
 
 
-
+  update(idMission:any , missionUpdate:any): Observable<any> {
+    return this.http.put(`${API_URL + 'modifierMission'}/${idMission}`, {
+      nom: missionUpdate.nom,
+      passport: missionUpdate.passport,
+      description: missionUpdate.description,
+      dateDeDebut : missionUpdate.dateDeDebut,
+      dateDeFin: missionUpdate.dateDeFin,
+      pays : missionUpdate.pays,
+      ville:missionUpdate.ville,
+      etat:missionUpdate.etat
+    }, this.httpOptions);
+  }
 
 
 

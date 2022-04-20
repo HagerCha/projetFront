@@ -3,133 +3,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <source>
   </head>
-  
-  
+
+
   <body>
-          <form name="form" > 
-            <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
-              <div class="wrapper wrapper--w790">
-                <div class="card card-5">
-                  <div class="card-heading">
-                    <h2 class="title">Demande de Mission</h2>
-                  </div>           
-  
-              <div class="card-body">
-                <div class="form-group">
-                    <div class="form-row m-b-55">
+          <form  #form="ngForm" >
+            <div class="form-group">
+              <label>nom</label>
+              <input type="text" class="form-control" formControlName="nom" >
 
-                    <div class="name">Données Personnelles</div>
-                            <div class="value">
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="Nom">
-                                            <label class="label--desc">Nom</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="Passport">
-                                            <label class="label--desc">N° Passport</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
+            </div>
+
+            <div class="form-group">
+              <label>passport</label>
+              <input type="text" class="form-control" formControlName="passport" >
+
+            </div>
+            <div class="form-group">
+              <label>DateDeDebut</label>
+              <input type="date" class="form-control" formControlName="dateDeDebut" >
+
+            </div>
+
+            <div class="form-group">
+              <label>DateFin</label>
+              <input type="date" class="form-control" formControlName="dateDeFin" >
+
+            </div>
 
 
-                    
-                  <div class="form-row m-b-55">
-                    <div class="name">Données Mission</div>
-                            <div class="value">
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-7" type="date" id="start" name="trip-start" value="2021-01-01"  min="2020-01-01" max="2050-12-31">
-                                            <label class="label--desc">Date Début</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-7" type="date" id="start" name="trip-start" value="2021-01-01"  min="2020-01-01" max="2050-12-31">
-                                            <label class="label--desc">Date Fin</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                  </div>
-  
-                  <div class="form-row m-b-55">
-                    <div class="name">Lieu</div>
-                            <div class="value">
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="Pays">
-                                            <label class="label--desc">Pays</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="Ville">
-                                            <label class="label--desc">Ville</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-             </div>
-  
-  
-             <div class="form-row m-b-55">
-                <div class="name">Description</div>
-                <div class="value">
-                    <div class="row row-space">
-                        <div class="col-2">
-                            <input class="input--style-5" type="text" name="Nom">
-                        </div>
-                    </div>
-                </div>
+
+            <div class="form-group">
+              <label>Description</label>
+              <input type="text" class="form-control" formControlName="description" >
+
             </div>
-  
-            <!--
-            <div class="form-row m-b-55">
-                <div class="name">Logement</div>
-                <div class="value">
-                    <div class="row row-refine">   
-                        <div class="col-9">
-                            <div class="form-row m-b-55">
-                                
-                                <input class="input--style-7" type="radio" name="Agence"><b></b>
-                                <label class="input--style-6">Dépenses payées par l'entreprise</label>
-                                </div>
-                        </div>
-                        <div class="col-9">
-                            <div class="form-row m-b-55">
-                                
-                                <input class="input--style-7" type="radio" name="Collaborateur"><b></b>
-                                <label class="input--style-6">Dépenses payées par le collaborateur</label>
-                                </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="form-group">
+              <label>Pays</label>
+              <input type="text" class="form-control" formControlName="pays" >
+
             </div>
-        -->
-  
-  
-                <button class="btn btn--radius-2 btn--red" type="submit">Enregistrer</button>
-                </div>
-            <!--<div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-              Echec création!<br />{{ errorMessage }}
-            </div>
-  
-          <div class="alert alert-success" *ngIf="isSuccessful">
-            Création du compte avec succès!
-          </div>-->
-                
-              </div> 
-            </div>
+            <div class="form-group">
+            <label>Ville</label>
+            <input type="text" class="form-control" formControlName="ville">
           </div>
-        </div>
+
+            <div class="form-group">
+
+              <label>Etat</label>
+              <input type="text" class="form-control" formControlName="etat" >
+
+            </div>
       </form>
-           
+          <button class="btn btn--radius-2 btn--red" type="submit" >Update</button>
+
   </body>
+
+

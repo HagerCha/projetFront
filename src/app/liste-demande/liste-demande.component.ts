@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import {TokenStorageService} from "../_services/token-storage.service";
 import Swal from 'sweetalert2';
 import {DemandeMissionService} from "../_services/demande-mission.service";
 import {MissionModel} from "../models/mission.model";
+import swal from 'sweetalert';
 
+@Injectable({
+  providedIn:'root'
+})
 
 @Component({
   selector: 'app-liste-demande',
@@ -52,12 +56,12 @@ export class ListeDemandeComponent implements OnInit {
     this.DemandeMissionService.delete($idMission).subscribe(data => {
 
     });
-    Swal.fire(
-      'Supprimé',
-      'Commande supprimé avec succès',
-      'success'
-    );
-    window.location.reload();
+    swal({
+      icon: "success",
+    }).then(() => {
+      window.location.reload();
+  })
+
 
   }
 }
