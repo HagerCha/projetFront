@@ -10,47 +10,55 @@ import { DemandeMissionService } from '../_services/demande-mission.service';
   styleUrls: ['./edit-mission.component.css']
 })
 export class EditMissionComponent implements OnInit {
-  form: any = {};
-  isSuccessful = false;
-  isSignUpFailed = false;
-  iduser: any;
-  
-  errorMessage = '';
+ // @ts-ignore
+ basicForm:FormGroup;
+ 
+
   idmission= '';
   mission: any;
   constructor(private router: Router, private  route: ActivatedRoute,private DemandeMissionService: DemandeMissionService ,
               ) {
                 //this.idmission = this.route['params']['value']['id'];
-                this.getById();
+               // this.getById();
 
     
   }
-  getById() {
-    this.DemandeMissionService.findById(this.idmission).subscribe(data => {
-      this.mission = data;
-      console.log('dataById',this.mission)
-      this.form = data;
-      console.log(this.form);
-    });
-
-  }
+ 
 
   ngOnInit(): void {
+    this.idmission = this.route.snapshot.params['idmission'];
+    this.DemandeMissionService.findById(this.idmission).subscribe(data => {
+      this.mission = data;
+      console.log("mission à modifier==>", this.mission);
+    })
    
+
+
   }
-  onSubmit(): void {
-    this.form.idmission = this.idmission;
-    this.DemandeMissionService.update(this.idmission , this.form).subscribe(
+  onSubmit(){
+    this.mission= {
 
-      data => {
-        console.log('melelkkk',data)
 
-        this.router.navigate(['/listeM']);
-      },
-      err => {
-        this.errorMessage = err.error.message;
 
-      }
-    );
+      nom: this.basicForm.controls.nom.value,
+      passport: this.basicForm.controls.passport.value,
+      dateDeDebut: this.basicForm.controls.dateDeDebut.value,
+      dateDeFin: this.basicForm.controls.dateDeFin.value,
+      description: this.basicForm.controls.description.value,
+      pays: this.basicForm.controls.pays.value,
+      ville: this.basicForm.controls.ville.value,
+      etat: this.basicForm.controls.etat.value,
+
+    };
+    console.log(this.mission);
+  
+    this.DemandeMissionService.update(this.mission,this.idmission).subscribe(
+      data=>{
+    console.log("mission après modification",data)
+  },error=>{
+    console.log(error)
+  });
   }
+  
+  
 }

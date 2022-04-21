@@ -1,6 +1,8 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import {TokenStorageService} from "../_services/token-storage.service";
 import Swal from 'sweetalert2';
+import {ActivatedRoute, Route, Router} from "@angular/router";
+
 import {DemandeMissionService} from "../_services/demande-mission.service";
 import {MissionModel} from "../models/mission.model";
 import swal from 'sweetalert';
@@ -16,7 +18,7 @@ import swal from 'sweetalert';
 })
 export class ListeDemandeComponent implements OnInit {
 
-  constructor(private DemandeMissionService: DemandeMissionService ,private tokenStorage: TokenStorageService) {
+  constructor(private DemandeMissionService: DemandeMissionService ,private tokenStorage: TokenStorageService,private router: Router, ) {
     this.getall();
   }
   missions: MissionModel []= [];
