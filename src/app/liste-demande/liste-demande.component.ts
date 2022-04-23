@@ -37,6 +37,9 @@ export class ListeDemandeComponent implements OnInit {
       });
 
   }
+edit(idmission:any){
+    this.router.navigateByUrl('/editM/'+idmission)
+}
 
 
 

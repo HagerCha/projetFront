@@ -3,6 +3,9 @@ import {ActivatedRoute, Route, Router} from "@angular/router";
 
 
 import { DemandeMissionService } from '../_services/demande-mission.service';
+import {MissionModel} from "../models/mission.model";
+import {MissionModule} from "../app/models/mission/mission.module";
+import {FormGroup, NgForm, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-edit-mission',
@@ -10,20 +13,33 @@ import { DemandeMissionService } from '../_services/demande-mission.service';
   styleUrls: ['./edit-mission.component.css']
 })
 export class EditMissionComponent implements OnInit {
- // @ts-ignore
- basicForm:FormGroup;
- 
+  nom!:String ;
 
-  idmission= '';
-  mission: any;
+  passport!: String;
+  dateDeDebut!:Date ;
+  description!: String;
+  dateDeFin!: Date;
+
+  pays!:String ;
+  ville!:String ;
+  etat!: String;
+
+
+
+  basicForm!:NgForm;
+
+
+  idmission! :number;
+
+
+  mission: MissionModel = new MissionModel();
   constructor(private router: Router, private  route: ActivatedRoute,private DemandeMissionService: DemandeMissionService ,
               ) {
-                //this.idmission = this.route['params']['value']['id'];
-               // this.getById();
 
-    
+
+
   }
- 
+
 
   ngOnInit(): void {
     this.idmission = this.route.snapshot.params['idmission'];
@@ -31,12 +47,15 @@ export class EditMissionComponent implements OnInit {
       this.mission = data;
       console.log("mission à modifier==>", this.mission);
     })
-   
+
+
+
 
 
   }
-  onSubmit(){
-    this.mission= {
+ onSubmit(){
+  console.log('iopfyff',this.mission);
+  this.mission= {
 
 
 
@@ -49,9 +68,11 @@ export class EditMissionComponent implements OnInit {
       ville: this.basicForm.controls.ville.value,
       etat: this.basicForm.controls.etat.value,
 
+
+
     };
-    console.log(this.mission);
-  
+    
+
     this.DemandeMissionService.update(this.mission,this.idmission).subscribe(
       data=>{
     console.log("mission après modification",data)
@@ -60,5 +81,5 @@ export class EditMissionComponent implements OnInit {
   });
   }
   
-  
+
 }

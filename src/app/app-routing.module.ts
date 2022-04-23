@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'miss', component: DemandeMissionComponent},
   { path: 'profiles', component: BoardAdminComponent },
   { path: 'listeM', component: ListeDemandeComponent },
-  { path: 'editM', component: EditMissionComponent}
+  { path: 'editM/:idmission', component: EditMissionComponent}
 ];
 
 @NgModule({
