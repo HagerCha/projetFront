@@ -115,14 +115,15 @@
 
             <!--Role-->
 
-            <div class="form-row m-b-55">
-              <label class="name" for="role">Rôle</label>
-              <input class="input--style-6" type="number" min="2" max="5" placeholder="0">
+            <div class="form-group">
+              <label  for="role">Rôle</label>
+              <select class="form-control" name="role"  id="role" [(ngModel)]="form.role" required role #role="ngModel">
+                <option value="" >manager</option>
+                <option value="paie">Plus 1ans</option>
+                <option value="assist">Plus 3ans</option>
+                <option value="collaborateur">Plus 5ans</option>
+              </select>
 
-              <label class="choice-container">2. Manager</label>
-              <label class="choice-container">3. Collaborateur</label>
-              <label class="choice-container">4. Gestionnaire de Paie</label>
-              <label class="choice-container">5. Assistant de Réservation</label>
 
             </div>
 

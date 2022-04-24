@@ -8,12 +8,7 @@ import { AuthService } from '../_services/auth.service';
 })
 export class RegisterComponent implements OnInit {
   form: any = {
-    nom: null,
-    email: null,
-    password: null,
-    passport:null,
-    prenom:null,
-    role:null,
+
   };
   isSuccessful = false;
   isSignUpFailed = false;
@@ -24,10 +19,12 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(): void {
-    const { nom, email, password ,passport,prenom,role} = this.form;
 
-    this.authService.register(nom, email, password,passport,prenom,role).subscribe(
+  onSubmit(): void {
+
+    console.log('data',this.form)
+
+   this.authService.register(this.form.nom, this.form.email,this.form. password,this.form.passport,this.form.prenom,this.form.role).subscribe(
 
       data => {
         console.log('melek',data.roles[0].name);

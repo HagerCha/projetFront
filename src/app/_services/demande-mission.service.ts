@@ -48,7 +48,7 @@ export class DemandeMissionService {
 
 
   update(idMission:any , missionUpdate:any): Observable<any> {
-    return this.http.put(`${API_URL + 'modifierMission'}/${idMission}`, {
+    return this.http.put(`${API_URL + 'modifierMembre'}/${idMission}`, {
       nom: missionUpdate.nom,
       passport: missionUpdate.passport,
       description: missionUpdate.description,

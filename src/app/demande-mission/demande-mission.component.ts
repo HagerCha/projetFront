@@ -17,8 +17,7 @@ import swal from 'sweetalert';
   styleUrls: ['./demande-mission.component.css']
 })
 export class DemandeMissionComponent implements OnInit {
-  // @ts-ignore
-  basicForm:FormGroup;
+  basicForm!:FormGroup;
 
 
 
@@ -58,7 +57,7 @@ export class DemandeMissionComponent implements OnInit {
       pays: this.basicForm.value.pays,
       ville: this.basicForm.value.ville,
       etat: this.basicForm.value.etat,
-     
+
 
 
 
@@ -76,10 +75,10 @@ export class DemandeMissionComponent implements OnInit {
 
 
 
-      
 
-  
+
+
 
   }
-     
+
 }

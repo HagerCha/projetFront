@@ -29,7 +29,8 @@ export class AuthService {
       email:email,
       password:password,
       prenom:prenom,
-      passport:passport
+      passport:passport,
+      role:role
 
     }, httpOptions);
   }

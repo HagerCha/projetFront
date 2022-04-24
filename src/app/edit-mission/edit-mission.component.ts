@@ -5,7 +5,7 @@ import {ActivatedRoute, Route, Router} from "@angular/router";
 import { DemandeMissionService } from '../_services/demande-mission.service';
 import {MissionModel} from "../models/mission.model";
 import {MissionModule} from "../app/models/mission/mission.module";
-import {FormGroup, NgForm, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, NgForm, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-edit-mission',
@@ -26,14 +26,14 @@ export class EditMissionComponent implements OnInit {
 
 
 
-  basicForm!:NgForm;
-
+ // basicForm!:NgForm;
+  basicForm!:FormGroup;
 
   idmission! :number;
 
 
   mission: MissionModel = new MissionModel();
-  constructor(private router: Router, private  route: ActivatedRoute,private DemandeMissionService: DemandeMissionService ,
+  constructor(private router: Router, private formbuilder:FormBuilder  ,private  route: ActivatedRoute,private DemandeMissionService: DemandeMissionService ,
               ) {
 
 
@@ -42,10 +42,38 @@ export class EditMissionComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.basicForm = this.formbuilder.group({
+      nom: [null,Validators.required],
+
+      passport: [null ,Validators.required],
+      dateDeDebut: [null,Validators.required],
+      description: [null,Validators.required],
+      dateDeFin: [null, Validators.required],
+
+      pays: [null, Validators.required],
+      ville: [null, Validators.required],
+      etat: ['en attend', Validators.required],
+
+    })
+
     this.idmission = this.route.snapshot.params['idmission'];
     this.DemandeMissionService.findById(this.idmission).subscribe(data => {
-      this.mission = data;
-      console.log("mission à modifier==>", this.mission);
+
+      console.log('data1',data)
+      this.basicForm.controls.nom.setValue(data?.nom);
+      this.basicForm.controls.passport.setValue(data?.passport);
+      this.basicForm.controls.dateDeDebut.setValue(data?.dateDeDebut);
+      this.basicForm.controls.description.setValue(data?.description);
+      this.basicForm.controls.dateDeFin.setValue(data?.dateDeFin);
+
+      this.basicForm.controls.pays.setValue(data?.pays);
+      this.basicForm.controls.ville.setValue(data?.ville);
+      this.basicForm.controls.etat.setValue(data?.etat);
+
+
+
+
+
     })
 
 
@@ -71,15 +99,15 @@ export class EditMissionComponent implements OnInit {
 
 
     };
-    
 
-    this.DemandeMissionService.update(this.mission,this.idmission).subscribe(
+
+    this.DemandeMissionService.update(this.idmission,this.mission).subscribe(
       data=>{
     console.log("mission après modification",data)
   },error=>{
     console.log(error)
   });
   }
-  
+
 
 }
