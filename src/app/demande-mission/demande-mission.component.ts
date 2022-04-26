@@ -39,7 +39,7 @@ export class DemandeMissionComponent implements OnInit {
 
       pays: [null, Validators.required],
       ville: [null, Validators.required],
-      etat: ['en attend', Validators.required],
+      etat: ['En attente', Validators.required],
 
   })
 
@@ -59,15 +59,14 @@ export class DemandeMissionComponent implements OnInit {
       etat: this.basicForm.value.etat,
 
 
-
-
     }
     this.DemandeMissionService.add(data).subscribe(
       data => {
-        console.log('melekaddd', data);
 
       });
       swal({
+        title: 'Succès',
+        text: 'Demande de mission enregistré',
         icon: "success",
       }).then(() => {
         window.location.reload();

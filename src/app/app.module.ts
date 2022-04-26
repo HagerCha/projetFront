@@ -10,13 +10,12 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
-import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { DemandeMissionComponent } from './demande-mission/demande-mission.component';
 import { ListeDemandeComponent } from './liste-demande/liste-demande.component';
 import { EditMissionComponent } from './edit-mission/edit-mission.component';
+import { ViewDemandeComponent } from './view-demande/view-demande.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +25,10 @@ import { EditMissionComponent } from './edit-mission/edit-mission.component';
     HomeComponent,
     ProfileComponent,
     BoardAdminComponent,
-    BoardModeratorComponent,
-    BoardUserComponent,
     DemandeMissionComponent,
     ListeDemandeComponent,
-    EditMissionComponent
+    EditMissionComponent,
+    ViewDemandeComponent
   ],
   imports: [
     BrowserModule,

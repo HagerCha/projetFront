@@ -18,7 +18,7 @@ import swal from 'sweetalert';
 })
 export class ListeDemandeComponent implements OnInit {
 
-  constructor(private DemandeMissionService: DemandeMissionService ,private tokenStorage: TokenStorageService,private router: Router, ) {
+  constructor(private DemandeMissionService: DemandeMissionService ,private router: Router, ) {
     this.getall();
   }
   missions: MissionModel []= [];
@@ -28,36 +28,26 @@ export class ListeDemandeComponent implements OnInit {
   ngOnInit(): void {
     this.getall();
   }
-  getall() {
 
+  getall() {
     this.DemandeMissionService.getall().subscribe(
       data => {
-        console.log('melek', data);
+      
         this.missions = data;
+        console.log('data',data)
+        //if(this.missions.id)
       });
-
   }
+
+
 edit(idmission:any){
     this.router.navigateByUrl('/editM/'+idmission)
 }
+view(idmission:any){
+  this.router.navigateByUrl('/view/'+idmission)
+}
 
-
-
- /* deleteMission(id:any){
-    this.DemandeMissionService.delete(id).subscribe(res => {
-      this.missions=this.missions.filter(item => item.id !== id);
-
-      console.log('Mission deleted successfully!');
-
-    });
-    Swal.fire(
-      'Supprimé',
-      'Mission supprimé avec succès',
-      'success'
-    );
-
-  }*/
-  delete($idMission:any) {
+delete($idMission:any) {
     this.DemandeMissionService.delete($idMission).subscribe(data => {
 
     });
@@ -66,7 +56,7 @@ edit(idmission:any){
     }).then(() => {
       window.location.reload();
   })
-
-
   }
+
+
 }

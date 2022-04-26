@@ -1,20 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Route, Router} from "@angular/router";
-import swal from 'sweetalert';
-
-
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import * as swal from 'sweetalert';
+import { MissionModel } from '../models/mission.model';
 import { DemandeMissionService } from '../_services/demande-mission.service';
-import {MissionModel} from "../models/mission.model";
-import {MissionModule} from "../app/models/mission/mission.module";
-import {FormBuilder, FormGroup, NgForm, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-edit-mission',
-  templateUrl: './edit-mission.component.html',
-  styleUrls: ['./edit-mission.component.css']
+  selector: 'app-view-demande',
+  templateUrl: './view-demande.component.html',
+  styleUrls: ['./view-demande.component.css']
 })
-export class EditMissionComponent implements OnInit {
+export class ViewDemandeComponent implements OnInit {
+
   nom!:String ;
 
   passport!: String;
@@ -63,30 +60,9 @@ export class EditMissionComponent implements OnInit {
     })
 
   }
- onSubmit(){
-  this.mission= {
-
-      nom: this.basicForm.controls.nom.value,
-      passport: this.basicForm.controls.passport.value,
-      dateDeDebut: this.basicForm.controls.dateDeDebut.value,
-      dateDeFin: this.basicForm.controls.dateDeFin.value,
-      description: this.basicForm.controls.description.value,
-      pays: this.basicForm.controls.pays.value,
-      ville: this.basicForm.controls.ville.value,
-      etat: this.basicForm.controls.etat.value,
-    };
 
 
    
-    this.DemandeMissionService.update(this.idmission,this.mission).subscribe(
-      data=>{
-    swal({
-    title: 'Succès',
-    text: 'Demande de mission enregistré',
-    icon: "success",
-      })
-    })
 
   
 }
- }

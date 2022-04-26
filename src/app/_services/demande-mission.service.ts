@@ -14,7 +14,6 @@ const TOKEN_KEY = 'auth-token';
 
 
 export class DemandeMissionService {
-  //const API_URLl = 'http://localhost:8086/api/mission/';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -28,6 +27,7 @@ export class DemandeMissionService {
 
     return this.http.get(API_URL + 'AllMission',this.httpOptions);
   }
+
  add(mission:any ): Observable<any> {
     return this.http.post(API_URL + 'addMission', {
       nom: mission.nom,
@@ -48,7 +48,7 @@ export class DemandeMissionService {
 
 
   update(idMission:any , missionUpdate:any): Observable<any> {
-    return this.http.put(`${API_URL + 'modifierMembre'}/${idMission}`, {
+    return this.http.put(`${API_URL + 'modifierMission'}/${idMission}`, {
       nom: missionUpdate.nom,
       passport: missionUpdate.passport,
       description: missionUpdate.description,
@@ -60,13 +60,8 @@ export class DemandeMissionService {
     }, this.httpOptions);
   }
 
-
-
-
-
   delete(idMission:any) {
     return this.http.delete(`${API_URL + 'DeleteMission'}/${idMission}`,this.httpOptions);
-
   }
 
 

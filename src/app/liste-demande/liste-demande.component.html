@@ -31,13 +31,15 @@
                       <td class="align-middle">{{mission.description}}</td>
                       <!--etat-->
                       <td class="align-middle">
-                        <h6 class="mb-0"><span class="badge bg-success">{{mission.etat}}</span></h6>
+                        <h6 class="mb-0"><span class="">{{mission.etat}}</span></h6>
                       </td>
-                      <td class="align-middle">
-                        <a  (click)="edit(mission.idMission)" data-mdb-toggle="tooltip" title="Done">Edit<i class="fas fa-check text-success me-3"></i></a>
 
+                      <td class="align-middle">
+                        <a (click)="view(mission.idMission)" data-mdb-toggle="tooltip" title="Done">View<i class="fas fa-check text-success me-3"></i></a>
                         <br>
-                        <a  data-mdb-toggle="tooltip" title="Remove " (click)="delete(mission.idMission)">Remove<i class="fas fa-trash-alt text-danger"></i></a>
+                        <a (click)="edit(mission.idMission)" data-mdb-toggle="tooltip" title="Done">Edit<i class="fas fa-check text-success me-3"></i></a>
+                        <br>
+                        <a (click)="delete(mission.idMission)" data-mdb-toggle="tooltip" title="Remove ">Remove<i class="fas fa-trash-alt text-danger"></i></a>
                       </td>
                     </tr>
 

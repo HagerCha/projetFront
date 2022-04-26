@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
+import swal from 'sweetalert';
+
+
 
 @Component({
   selector: 'app-register',
@@ -18,7 +21,7 @@ export class RegisterComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-
+   data:any
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -27,11 +30,18 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(): void {
     const { nom, email, password ,passport,prenom,role} = this.form;
-    console.log('data',this.form)
+    swal({
+      title: 'Succès',
+      text: 'Utilisateur ajouté avec succès',
+      icon: "success",
+    }).then(() => {
+    })
 
    this.authService.register(nom, email,password,passport,prenom,role).subscribe(
 
       data => {
+        this.data= data
+        console.log('data',this.data)
         console.log('melek',data.roles[0].name);
         this.isSuccessful = true;
         this.isSignUpFailed = false;

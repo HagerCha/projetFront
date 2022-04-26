@@ -84,7 +84,7 @@
                     <input type="password" class="input--style-5" name="password" [(ngModel)]="form.password" required
                            minlength="6" #password="ngModel" />
                     <div class="alert-danger" *ngIf="password.errors && f.submitted">
-                      <div *ngIf="password.errors.required">Email est obligatoire</div>
+                      <div *ngIf="password.errors.required">Mot de passe est obligatoire</div>
                       <div *ngIf="password.errors.minlength">
                         Mot de passe doit contenir au moins 6 caractères
                       </div>
@@ -115,14 +115,13 @@
 
             <!--Role-->
             <div class="form-row m-b-55">
-              <label class="role" for="role">Rôle</label>
-              <input class="input--style-6" type="number" min="2" max="5" placeholder="0">
-
-              <label class="choice-container">2. Manager</label>
-              <label class="choice-container">3. Collaborateur</label>
-              <label class="choice-container">4. Gestionnaire de Paie</label>
-              <label class="choice-container">5. Assistant de Réservation</label>
-
+              <label class="name" for="role">Rôle</label>
+              <select class="input--style-7" name="role" id="">
+                <option value="Manager">Manager</option>
+                <option value="Collaborateur">Collaborateur</option>
+                <option value="Gestionnaire de Paie">Gestionnaire de Paie</option>
+                <option value="Assistant de Reservation">Assistant de Réservation</option>
+              </select>
             </div>
 
             <button class="btn btn--radius-2 btn--red" type="submit">Enregistrer</button>
@@ -139,6 +138,8 @@
       </div>
     </div>
   </div>
+  <app-profile [data]="data"></app-profile>
+
 </form>
 
 </body>

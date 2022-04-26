@@ -24,7 +24,7 @@ label {
   .profile-img-card {
     width: 96px;
     height: 96px;
-    margin: 0 auto 10px;
+    margin: 0S auto 10px;
     display: block;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -300,25 +300,10 @@ label {
        #WRAPPER
        ========================================================================== */
     .wrapper {
-      margin: 0 auto;
+      padding-left: 15%;
+      padding-right: 15%;
     }
-    
-    .wrapper--w960 {
-      max-width: 960px;
-    }
-    
-    .wrapper--w790 {
-      max-width: 790px;
-    }
-    
-    .wrapper--w780 {
-      max-width: 780px;
-    }
-    
-    .wrapper--w680 {
-      max-width: 680px;
-    }
-    
+        
     /* ==========================================================================
        #BUTTON
        ========================================================================== */
@@ -448,7 +433,7 @@ label {
     .input--style-5 {
       background: #e5e5e5;
       line-height: 50px;
-      width: 400%;
+      width: 300px;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
@@ -461,7 +446,7 @@ label {
       position: relative;
       background: #e5e5e5;
       line-height: 50px;
-      width: 400%;
+      width: 10%;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
@@ -480,7 +465,22 @@ label {
         border-radius: 5px;
         padding-top: 20%;
         font-size: 16px;
-      }
+        background-color: #e5e5e5;
+    }
+
+      
+    .input--style-8 {
+      background: #e5e5e5;
+      line-height: 30px;
+      width: 500px;
+      height: 150px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      padding: 0 22px;
+      font-size: 16px;
+      color: #555;
+    }
   
     input[type=number]::-webkit-inner-spin-button, 
     input[type=number]::-webkit-outer-spin-button {
