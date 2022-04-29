@@ -1,0 +1,164 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <source>
+</head>
+
+
+<body>
+    <form name="form" [formGroup]="basicForm" #form="ngForm" >
+
+        <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+            <div class="wrapper wrapper--w790">
+                <div class="card card-5">
+                    <div class="card-heading">
+                        <h2 class="title">Demande de note de frais</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="form-group">
+
+                            <div class="form-row m-b-55">
+                                <div class="name">Données Personnelles</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input required class="input--style-5" type="text"
+                                                    formControlName="nom">
+                                                <label class="label--desc">Nom</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" formControlName="numMission"
+                                                    required>
+                                                <label class="label--desc">Numéro Mission</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                
+                            <div class="form-row m-b-55">
+                                <div class="name">NbNuit</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input required class="input--style-5" type="number"
+                                                    formControlName="nbNuit">
+                                                <label class="label--desc"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="number" formControlName="montantNuit"
+                                                    required>
+                                                <label class="label--desc"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-b-55">
+                                <div class="name">Repas</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input required class="input--style-5" type="number"
+                                                    formControlName="montantDP">
+                                                <label class="label--desc">Montant Demi-pension</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="number" formControlName="montantPC"
+                                                    required>
+                                                <label class="label--desc">Montant Pension Complète</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row m-b-55">
+                                <div class="name">Déplacement</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <select formControlName="transport" class="input--style-7" name="role" id="">
+                                                    <option value="Bus">Bus</option>
+                                                    <option value="Train">Train</option>
+                                                    <option value="Taxi">Taxi</option>
+                                                    <option value="Location Voiture">Location Voiture</option>
+                                                </select>
+                                                <label class="label--desc">Type de transport</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="number" formControlName="montantTransport"
+                                                    required>
+                                                <label class="label--desc">Montant Demandé pour le transport</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row m-b-55">
+                                <div class="name">Voyage</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input required formControlName="dateArrivee" class="input--style-7"
+                                                    type="date" id="start" name="trip-start" value="2021-01-01"
+                                                    min="2022-01-01" max="2050-12-31">
+                                                <label class="label--desc">Date d'arrivée</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input required formControlName="dateRetour" class="input--style-7"
+                                                    type="date" id="start" name="trip-start" value="2021-01-01"
+                                                    min="2022-01-01" max="2050-12-31">
+                                                <label class="label--desc">Date de retour</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="form-row m-b-55">
+                                <div class="name"></div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" formControlName="compagnie"
+                                                    required>
+                                                <label class="label--desc">Compagnie Aerienne</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="number" formControlName="montantVoyage"
+                                                    required>
+                                                <label class="label--desc">Montant Demandé</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>

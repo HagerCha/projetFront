@@ -16,6 +16,10 @@ import { DemandeMissionComponent } from './demande-mission/demande-mission.compo
 import { ListeDemandeComponent } from './liste-demande/liste-demande.component';
 import { EditMissionComponent } from './edit-mission/edit-mission.component';
 import { ViewDemandeComponent } from './view-demande/view-demande.component';
+import { DemandeNDFComponent } from './demande-ndf/demande-ndf.component';
+import { EditNDFComponent } from './edit-ndf/edit-ndf.component';
+import { ListeNDFComponent } from './liste-ndf/liste-ndf.component';
+import { ViewNDFComponent } from './view-ndf/view-ndf.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { ViewDemandeComponent } from './view-demande/view-demande.component';
     DemandeMissionComponent,
     ListeDemandeComponent,
     EditMissionComponent,
-    ViewDemandeComponent
+    ViewDemandeComponent,
+    DemandeNDFComponent,
+    EditNDFComponent,
+    ListeNDFComponent,
+    ViewNDFComponent
   ],
   imports: [
     BrowserModule,

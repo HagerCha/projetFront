@@ -1,0 +1,56 @@
+<div class="container">
+
+    <section class="vh-100" style="background-color: #eee;">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-12 col-xl-10">
+
+            <div class="card">
+              <div class="card-header p-3">
+                <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Liste des Demandes de NDF</h5>
+              </div>
+              <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
+
+                <table class="table mb-0">
+                   <thead>
+                    <tr>
+                      <th scope="col">Nom du Collaborateur</th>
+                      <th scope="col">Montant total</th>
+                      <th scope="col">Etat</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let NDF of NDFs">
+
+                    <tr class="fw-normal">
+                      <th>
+                        <!--Nom collaborateur-->
+                        <span class="ms-2">{{NDF.nom}}</span>
+                      </th>
+                      <!--montant NDF-->
+                      <td class="align-middle">{{NDF.numMission}}</td>
+                    
+
+                      <td class="align-middle">
+                        <a (click)="view(NDF.idNDF)" data-mdb-toggle="tooltip" title="Done">View<i class="fas fa-check text-success me-3"></i></a>
+                        <br>
+                        <a (click)="edit(NDF.idNDF)" data-mdb-toggle="tooltip" title="Done">Edit<i class="fas fa-check text-success me-3"></i></a>
+                        <br>
+                        <a (click)="delete(NDF.idNDF)" data-mdb-toggle="tooltip" title="Remove ">Remove<i class="fas fa-trash-alt text-danger"></i></a>
+                      </td>
+                    </tr>
+
+
+
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>

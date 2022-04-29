@@ -10,6 +10,10 @@ import { DemandeMissionComponent } from './demande-mission/demande-mission.compo
 import { ListeDemandeComponent } from './liste-demande/liste-demande.component';
 import { EditMissionComponent } from './edit-mission/edit-mission.component';
 import { ViewDemandeComponent } from './view-demande/view-demande.component';
+import { DemandeNDFComponent } from './demande-ndf/demande-ndf.component';
+import { ListeNDFComponent } from './liste-ndf/liste-ndf.component';
+import { EditNDFComponent } from './edit-ndf/edit-ndf.component';
+import { ViewNDFComponent } from './view-ndf/view-ndf.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -20,7 +24,11 @@ const routes: Routes = [
   { path: 'profiles', component: BoardAdminComponent },
   { path: 'listeM', component: ListeDemandeComponent },
   { path: 'editM/:idmission', component: EditMissionComponent},
-  { path: 'view/:idmission', component: ViewDemandeComponent}
+  { path: 'view/:idmission', component: ViewDemandeComponent},
+  { path: 'NDF', component: DemandeNDFComponent},
+  { path: 'listeNDF', component:ListeNDFComponent},
+  { path: 'editNDF/:idNDF', component: EditNDFComponent},
+  { path: 'viewNDF/:idNDF', component: ViewNDFComponent },
 
 ];
 

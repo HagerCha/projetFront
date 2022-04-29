@@ -292,7 +292,7 @@ label {
     }
     
     .m-b-55 {
-      margin-bottom: 55px;
+      margin-bottom: 60px;
       margin-right: 20%;
     }
     
@@ -323,7 +323,7 @@ label {
       font-family: inherit;
       position: absolute;
       margin: 0;
-      top: 135%;
+      top: 145%;
       left: 50%;
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
@@ -521,10 +521,12 @@ label {
     .label--desc {
       position: absolute;
       text-transform: capitalize;
-      display: block;
-      color: #999;
+      clear: both;
+      overflow: hidden;
+      white-space: nowrap;
+      display: inline-block;
+      color: rgb(103, 102, 102);
       font-size: 14px;
-      margin: 0;
       margin-top: 7px;
       left: 0;
     }

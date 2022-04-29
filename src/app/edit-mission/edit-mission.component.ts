@@ -44,7 +44,7 @@ export class EditMissionComponent implements OnInit {
       dateDeFin: [null, Validators.required],
       pays: [null, Validators.required],
       ville: [null, Validators.required],
-      etat: ['En attente', Validators.required],
+      etat: [null, Validators.required],
     })
 
     this.idmission = this.route.snapshot.params['idmission'];
@@ -82,7 +82,7 @@ export class EditMissionComponent implements OnInit {
       data=>{
     swal({
     title: 'Succès',
-    text: 'Demande de mission enregistré',
+    text: 'Demande de mission mise à jour',
     icon: "success",
       })
     })

@@ -13,19 +13,19 @@
         <a  class="nav-link" routerLink="ajout">Ajouter Profile</a>
       </li>
       <li class="nav-item" *ngIf="showCollaborateurBoard">
-        <a href="/admin" class="nav-link" routerLink="miss">Demande mission</a>
+        <a class="nav-link" routerLink="miss">Demande de mission</a>
       </li>
       <li class="nav-item" *ngIf="showCollaborateurBoard">
-        <a href="/mod" class="nav-link" routerLink="mod">Demande NDF</a>
+        <a class="nav-link" routerLink="NDF">Demande de note de frais</a>
       </li>
       <li class="nav-item" *ngIf="showCollaborateurBoard || showManagerBoard">
-        <a class="nav-link" routerLink="listeM">Liste Mission</a>
+        <a class="nav-link" routerLink="listeM">Liste Missions</a>
       </li>
-      <li class="nav-item" *ngIf="showCollaborateurBoard || showManagerBoard">
-        <a href="/admin" class="nav-link" routerLink="admin">Liste NDF</a>
+      <li class="nav-item" *ngIf="showCollaborateurBoard || showPaieBoard">
+        <a class="nav-link" routerLink="listeNDF">Liste notes de frais</a>
       </li>
       <li class="nav-item" *ngIf="showAssistBoard">
-        <a href="/admin" class="nav-link" routerLink="admin">Reservation</a>
+        <a class="nav-link" routerLink="admin">Reservations</a>
       </li>
     </ul>
 
