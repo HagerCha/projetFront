@@ -1,0 +1,13 @@
+.title {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: right;
+    color: #fff;
+    padding-right: 10%;
+  }
+
+.card-heading {
+    padding: 50px 0;
+    background: linear-gradient(to right, #a4abbf, #1F4099)
+  }

@@ -1,56 +1,62 @@
 <div class="container">
 
-    <section class="vh-100" style="background-color: #eee;">
-      <div class="container py-5 h-100">
+    <section class="vh-100" >
+      
         <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-md-12 col-xl-10">
+          <div class="col-md-12 col-xl-100">
 
-            <div class="card">
-              <div class="card-header p-3">
-                <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Liste des Demandes de NDF</h5>
+            <div class="page-wrapper bg-gra-03">
+              <div class="wrapper wrapper--w790">
+              <div class="card card-5">
+
+              <div class="card-heading">
+                <h5 class="title">Liste des Demandes de notes de frais</h5>
               </div>
-              <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
 
-                <table class="table mb-0">
+              <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 100%;">
+                <table class="table">
                    <thead>
                     <tr>
-                      <th scope="col">Nom du Collaborateur</th>
-                      <th scope="col">Montant total</th>
-                      <th scope="col">Etat</th>
-                      <th scope="col">Actions</th>
+                      <th class="th" scope="col">Nom du Collaborateur</th>
+                      <th class="th" scope="col">Montant total</th>
+                      <th class="th" scope="col">Etat</th>
+                      <th class="th" scope="col">Actions</th>
                     </tr>
                   </thead>
+
                   <tbody *ngFor="let NDF of NDFs">
 
-                    <tr class="fw-normal">
-                      <th>
-                        <!--Nom collaborateur-->
+                    <tr>
+                      <th class="td">
+                      <!--Nom collaborateur-->
                         <span class="ms-2">{{NDF.nom}}</span>
                       </th>
+
                       <!--montant NDF-->
-                      <td class="align-middle">{{NDF.numMission}}</td>
-                    
+                      <td class="td" >{{NDF.numMission}}</td>
 
-                      <td class="align-middle">
-                        <a (click)="view(NDF.idNDF)" data-mdb-toggle="tooltip" title="Done">View<i class="fas fa-check text-success me-3"></i></a>
-                        <br>
-                        <a (click)="edit(NDF.idNDF)" data-mdb-toggle="tooltip" title="Done">Edit<i class="fas fa-check text-success me-3"></i></a>
-                        <br>
-                        <a (click)="delete(NDF.idNDF)" data-mdb-toggle="tooltip" title="Remove ">Remove<i class="fas fa-trash-alt text-danger"></i></a>
+                      <!--Etat-->
+                      <td class="td">
+                        <h6 class="td"></h6>
                       </td>
+                    
+                      <td class="td">
+                        <a (click)="view(NDF.idNDF)" data-mdb-toggle="tooltip" title="View"><i class="view gg-eye"></i>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                        <a (click)="edit(NDF.idNDF)" data-mdb-toggle="tooltip" title="Edit">&nbsp;&nbsp;<i class="gg-edit-markup"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                        <a (click)="delete(NDF.idNDF)" data-mdb-toggle="tooltip" title="Remove ">&nbsp;&nbsp;<i class="remove gg-trash"></i>&nbsp;</a>
+                      </td>
+                      
                     </tr>
-
-
-
+                    <br>
                   </tbody>
                 </table>
-
               </div>
-            </div>
 
+            </div>
+            </div>
+            </div>
           </div>
         </div>
-      </div>
     </section>
 
   </div>

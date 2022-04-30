@@ -42,21 +42,21 @@
 
                 
                             <div class="form-row m-b-55">
-                                <div class="name">NbNuit</div>
+                                <div class="name">Hébergement</div>
                                 <div class="value">
                                     <div class="row row-space">
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input required class="input--style-5" type="number"
                                                     formControlName="nbNuit">
-                                                <label class="label--desc"></label>
+                                                <label class="label--desc">Nombre de nuité</label>
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input class="input--style-5" type="number" formControlName="montantNuit"
                                                     required>
-                                                <label class="label--desc"></label>
+                                                <label class="label--desc">Montant par nuité</label>
                                             </div>
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
                                 </div>                                
                             </div>
                             <div class="form-row m-b-55">
-                                <div class="name"></div>
+                                <div class="name">Vol</div>
                                 <div class="value">
                                     <div class="row row-space">
                                         <div class="col-2">
@@ -146,15 +146,22 @@
                                         </div>
                                         <div class="col-2">
                                             <div class="input-group-desc"  for="montantVoyage">
-                                                <input class="input--style-5" type="number"   #montantVoyage="ngModel" formControlName="montantVoyage"
+                                                <input class="input--style-5" type="number" formControlName="montantVoyage"
                                                     required >
-                                                <label class="label--desc">Montant Demandé</label>
-                                                <div class="alert-danger" *ngIf="montantVoyage.errors && f.submitted">
-                                                    <div *ngIf="montantVoyage.errors.required">Mot de passe est obligatoire</div>
-                                                    <div *ngIf="montantVoyage.errors.minlength">
-                                                      Mot de passe doit contenir au moins 6 caractères
-                                                    </div>
-                                                  </div>
+                                                <label class="label--desc">Montant Demandé pour le vol</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row m-b-55">
+                                <div class="name">Montant total des frais</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" formControlName="total" readonly required>
                                             </div>
                                         </div>
                                     </div>

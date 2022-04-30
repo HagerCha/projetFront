@@ -10,20 +10,23 @@ import { DemandeNDFService } from '../_services/demande-ndf.service';
   styleUrls: ['./view-ndf.component.css']
 })
 export class ViewNDFComponent implements OnInit {
-
-  nom!:String ;
-
-  passport!: String;
-  dateDeDebut!:Date ;
-  description!: String;
-  dateDeFin!: Date;
-  pays!:String ;
-  ville!:String ;
-  etat!: String;
-
-  basicForm!:FormGroup;
-
-  idNDF! :number;
+  
+      nom!:String ;
+      numMission!: String;
+      nbNuit!:Date ;
+      montantNuit!: String;
+      montantDP!: Date;
+      montantPC!:String ;
+      transport!:String ;
+      montantTransport!: String;
+      dateArrivee!: Date;
+      dateRetour!:String ;
+      compagnie!:String ;
+      montantVoyage!: String;
+    
+      basicForm!:FormGroup;
+    
+      idNDF! :number;
   mission: MissionNDFModule = new MissionNDFModule();
   constructor(private router: Router, private formbuilder:FormBuilder  ,private  route: ActivatedRoute,private DemandeNDFService: DemandeNDFService ,
               ) {
@@ -34,7 +37,7 @@ export class ViewNDFComponent implements OnInit {
   ngOnInit(): void {
     this.basicForm = this.formbuilder.group({
       nom: [null,Validators.required],
-      numNDF: [null ,Validators.required],
+      numMission: [null ,Validators.required],
       nbNuit: [null,Validators.required],
       montantNuit: [null,Validators.required],
       montantDP: [null, Validators.required],

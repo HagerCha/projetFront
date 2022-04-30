@@ -13,7 +13,6 @@ import { DemandeMissionService } from '../_services/demande-mission.service';
 export class ViewDemandeComponent implements OnInit {
 
   nom!:String ;
-
   passport!: String;
   dateDeDebut!:Date ;
   description!: String;
