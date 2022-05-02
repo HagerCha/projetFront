@@ -3,16 +3,29 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const AUTH_API = 'http://localhost:8086/api/auth/';
-
+const TOKEN_KEY = 'auth-token';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+
 };
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  httpOption = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem(TOKEN_KEY)}`
+    })
+  }
   constructor(private http: HttpClient) { }
+
+
+  getall(): Observable<any> {
+
+    return this.http.get(AUTH_API + 'AllUser', this.httpOption);
+  }
 
   login(username: string, password: string): Observable<any> {
     return this.http.post(AUTH_API + 'signin', {
