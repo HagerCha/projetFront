@@ -17,6 +17,7 @@ import swal from 'sweetalert';
 })
 export class DemandeNDFComponent implements OnInit {
   basicForm!:FormGroup;
+  submitted = false;
 
 
 
@@ -49,6 +50,7 @@ export class DemandeNDFComponent implements OnInit {
     return this.basicForm.controls;
   }
   onSubmit(): void {
+    this.submitted = true;
     let data = {
       nom: this.basicForm.value.nom,
       numMission: this.basicForm.value.numMission,
@@ -62,8 +64,11 @@ export class DemandeNDFComponent implements OnInit {
       dateRetour: this.basicForm.value.dateRetour,
       compagnie: this.basicForm.value.compagnie,
       montantVoyage: this.basicForm.value.montantVoyage,
-      
 
+
+    }
+    if (this.basicForm.invalid) {
+      return;
     }
     console.log('nbNuit: this.basicForm.value.NbNuit,', this.basicForm.value.nbNuit,)
     this.DemandeNDFService.add(data).subscribe(
@@ -81,5 +86,8 @@ export class DemandeNDFComponent implements OnInit {
 
 
   }
-
+  onReset() {
+    this.submitted = false;
+    this.basicForm.reset();
+  }
 }

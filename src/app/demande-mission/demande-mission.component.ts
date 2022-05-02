@@ -18,6 +18,7 @@ import swal from 'sweetalert';
 })
 export class DemandeMissionComponent implements OnInit {
   basicForm!:FormGroup;
+  submitted = false;
 
 
 
@@ -48,6 +49,8 @@ export class DemandeMissionComponent implements OnInit {
     return this.basicForm.controls;
   }
   onSubmit(): void {
+
+    this.submitted = true;
     let data = {
       nom: this.basicForm.value.nom,
       passport: this.basicForm.value.passport,
@@ -60,6 +63,10 @@ export class DemandeMissionComponent implements OnInit {
 
 
     }
+    if (this.basicForm.invalid) {
+      return;
+    }
+
     this.DemandeMissionService.add(data).subscribe(
       data => {
 
@@ -73,6 +80,10 @@ export class DemandeMissionComponent implements OnInit {
     })
 
 
+  }
+  onReset() {
+    this.submitted = false;
+    this.basicForm.reset();
   }
 
 }

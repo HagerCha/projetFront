@@ -25,14 +25,20 @@
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input required class="input--style-5" type="text"
-                                                    formControlName="nom">
+                                                    formControlName="nom"  [ngClass]="{ 'is-invalid': submitted && f.nom.errors }">
+                                              <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+                                                <div *ngIf="f.nom.errors.required">nom required</div>
+                                              </div>
                                                 <label class="label--desc">Nom</label>
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input class="input--style-5" type="text" formControlName="numMission"
-                                                    required>
+                                                       [ngClass]="{ 'is-invalid': submitted && f.numMission.errors }" >
+                                              <div *ngIf="submitted && f.numMission.errors" class="invalid-feedback">
+                                                <div *ngIf="f.numMission.errors.required">nom required</div>
+                                              </div>
                                                 <label class="label--desc">Numéro Mission</label>
                                             </div>
                                         </div>
@@ -40,7 +46,7 @@
                                 </div>
                             </div>
 
-                
+
                             <div class="form-row m-b-55">
                                 <div class="name">Hébergement</div>
                                 <div class="value">
@@ -48,14 +54,22 @@
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input required class="input--style-5" type="number"
-                                                    formControlName="nbNuit">
+                                                    formControlName="nbNuit"
+                                                       [ngClass]="{ 'is-invalid': submitted && f.nbNuit.errors }" >
+                                              <div *ngIf="submitted && f.nbNuit.errors" class="invalid-feedback">
+                                                <div *ngIf="f.nbNuit.errors.required">Nombre de nuité required</div>
+                                              </div>
+
                                                 <label class="label--desc">Nombre de nuité</label>
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input class="input--style-5" type="number" formControlName="montantNuit"
-                                                    required>
+                                                       [ngClass]="{ 'is-invalid': submitted && f.montantNuit.errors }" >
+                                              <div *ngIf="submitted && f.montantNuit.errors" class="invalid-feedback">
+                                                <div *ngIf="f.montantNuit.errors.required">Montant par nuitérequired</div>
+                                              </div>
                                                 <label class="label--desc">Montant par nuité</label>
                                             </div>
                                         </div>
@@ -69,14 +83,21 @@
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input required class="input--style-5" type="number"
-                                                    formControlName="montantDP">
+                                                    formControlName="montantDP"
+                                                       [ngClass]="{ 'is-invalid': submitted && f.montantDP.errors }" >
+                                              <div *ngIf="submitted && f.montantDP.errors" class="invalid-feedback">
+                                                <div *ngIf="f.montantDP.errors.required">Montant Demi-pension érequired</div>
+                                              </div>
                                                 <label class="label--desc">Montant Demi-pension</label>
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input class="input--style-5" type="number" formControlName="montantPC"
-                                                    required>
+                                                       [ngClass]="{ 'is-invalid': submitted && f.montantPC.errors }" >
+                                              <div *ngIf="submitted && f.montantPC.errors" class="invalid-feedback">
+                                                <div *ngIf="f.montantPC.errors.required">Montant Pension Complèteérequired</div>
+                                              </div>
                                                 <label class="label--desc">Montant Pension Complète</label>
                                             </div>
                                         </div>
@@ -90,19 +111,27 @@
                                     <div class="row row-space">
                                         <div class="col-2">
                                             <div class="input-group-desc">
-                                                <select formControlName="transport" class="input--style-7" name="role" id="">
+                                                <select formControlName="transport" class="input--style-7" name="role" id=""
+                                                        [ngClass]="{ 'is-invalid': submitted && f.transport.errors }">
                                                     <option value="Bus">Bus</option>
                                                     <option value="Train">Train</option>
                                                     <option value="Taxi">Taxi</option>
                                                     <option value="Location Voiture">Location Voiture</option>
                                                 </select>
+                                              <div *ngIf="submitted && f.transport.errors" class="invalid-feedback">
+                                                <div *ngIf="f.transport.errors.required">transport is required</div>
+                                              </div>
+
                                                 <label class="label--desc">Type de transport</label>
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input class="input--style-5" type="number" formControlName="montantTransport"
-                                                    required>
+                                                       [ngClass]="{ 'is-invalid': submitted && f.montantTransport.errors }" >
+                                              <div *ngIf="submitted && f.montantTransport.errors" class="invalid-feedback">
+                                                <div *ngIf="f.montantTransport.errors.required">Montant Demandé pour le transport required</div>
+                                              </div>
                                                 <label class="label--desc">Montant Demandé pour le transport</label>
                                             </div>
                                         </div>
@@ -118,20 +147,27 @@
                                             <div class="input-group-desc">
                                                 <input required formControlName="dateArrivee" class="input--style-7"
                                                     type="date" id="start" name="trip-start" value="2021-01-01"
-                                                    min="2022-01-01" max="2050-12-31">
+                                                    min="2022-01-01" max="2050-12-31"
+                                                       [ngClass]="{ 'is-invalid': submitted && f.dateArrivee.errors }" >
+                                              <div *ngIf="submitted && f.dateArrivee.errors" class="invalid-feedback">
+                                                <div *ngIf="f.dateArrivee.errors.required">Date d'arrivée required</div>
+                                              </div>
                                                 <label class="label--desc">Date d'arrivée</label>
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input required formControlName="dateRetour" class="input--style-7"
-                                                    type="date" id="start" name="trip-start" value="2021-01-01"
-                                                    min="2022-01-01" max="2050-12-31">
+                                                    type="date" id="end" name="trip-start" value="2021-01-01"
+                                                    min="2022-01-01" max="2050-12-31" [ngClass]="{ 'is-invalid': submitted && f.dateRetour.errors }" >
+                                              <div *ngIf="submitted && f.dateRetour.errors" class="invalid-feedback">
+                                                <div *ngIf="f.dateRetour.errors.required">Daate de retour required</div>
+                                              </div>
                                                 <label class="label--desc">Date de retour</label>
                                             </div>
                                         </div>
                                     </div>
-                                </div>                                
+                                </div>
                             </div>
                             <div class="form-row m-b-55">
                                 <div class="name">Vol</div>
@@ -140,14 +176,20 @@
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input class="input--style-5" type="text" formControlName="compagnie"
-                                                    required>
+                                                       [ngClass]="{ 'is-invalid': submitted && f.compagnie.errors }" >
+                                              <div *ngIf="submitted && f.compagnie.errors" class="invalid-feedback">
+                                                <div *ngIf="f.compagnie.errors.required">Compagnie Aerienne required</div>
+                                              </div>
                                                 <label class="label--desc">Compagnie Aerienne</label>
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="input-group-desc"  for="montantVoyage">
                                                 <input class="input--style-5" type="number" formControlName="montantVoyage"
-                                                    required >
+                                                       [ngClass]="{ 'is-invalid': submitted && f.montantVoyage.errors }" >
+                                              <div *ngIf="submitted && f.montantVoyage.errors" class="invalid-feedback">
+                                                <div *ngIf="f.montantVoyage.errors.required">Montant Demandé pour le vol required</div>
+                                              </div>
                                                 <label class="label--desc">Montant Demandé pour le vol</label>
                                             </div>
                                         </div>
@@ -167,7 +209,7 @@
                                     </div>
                                 </div>
                             </div>
-                                                      
+
                         </div>
                     </div>
                 </div>

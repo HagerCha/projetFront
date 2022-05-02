@@ -25,14 +25,20 @@
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input required class="input--style-5" type="text"
-                                                    formControlName="nom">
+                                                    formControlName="nom"  [ngClass]="{ 'is-invalid': submitted && f.nom.errors }" >
+                                              <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+                                                <div *ngIf="f.nom.errors.required">nom required</div>
+                                              </div>
                                                 <label class="label--desc">Nom</label>
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input class="input--style-5" type="text" formControlName="passport"
-                                                    required>
+                                                       [ngClass]="{ 'is-invalid': submitted && f.passport.errors }">
+                                              <div *ngIf="submitted && f.passport.errors" class="invalid-feedback">
+                                                <div *ngIf="f.passport.errors.required">passport required</div>
+                                              </div>
                                                 <label class="label--desc">N° Passport</label>
                                             </div>
                                         </div>
@@ -50,15 +56,21 @@
                                             <div class="input-group-desc">
                                                 <input required formControlName="dateDeDebut" class="input--style-7"
                                                     type="date" id="start" name="trip-start" value="2021-01-01"
-                                                    min="2022-01-01" max="2050-12-31">
+                                                    min="2022-01-01" max="2050-12-31"  [ngClass]="{ 'is-invalid': submitted && f.dateDeFin.errors }">
+                                              <div *ngIf="submitted && f.dateDeDebut.errors" class="invalid-feedback">
+                                                <div *ngIf="f.dateDeDebut.errors.required">dateDeFin required</div>
+                                              </div>
                                                 <label class="label--desc">Date Début</label>
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input required formControlName="dateDeFin" class="input--style-7"
-                                                    type="date" id="start" name="trip-start" value="2021-01-01"
-                                                    min="2022-01-01" max="2050-12-31">
+                                                    type="date" id="end" name="trip-start" value="2021-01-01"
+                                                    min="2022-01-01" max="2050-12-31" [ngClass]="{ 'is-invalid': submitted && f.dateDeFin.errors }">
+                                              <div *ngIf="submitted && f.dateDeFin.errors" class="invalid-feedback">
+                                                <div *ngIf="f.dateDeFin.errors.required">dateDeFin required</div>
+                                              </div>
                                                 <label class="label--desc">Date Fin</label>
                                             </div>
                                         </div>
@@ -72,15 +84,24 @@
                                     <div class="row row-space">
                                         <div class="col-2">
                                             <div class="input-group-desc">
-                                                <input required formControlName="pays" class="input--style-5"
-                                                    type="text">
+                                                <input   formControlName="pays" class="input--style-5"
+                                                    type="text"
+                                                         [ngClass]="{ 'is-invalid': submitted && f.pays.errors }" >
+
+                                              <div *ngIf="submitted && f.pays.errors" class="invalid-feedback">
+                                                <div *ngIf="f.pays.errors.required">pays required</div>
+                                              </div>
+
                                                 <label class="label--desc">Pays</label>
                                             </div>
                                         </div>
                                         <div class="col-2">
                                             <div class="input-group-desc">
                                                 <input required formControlName="ville" class="input--style-5"
-                                                    type="text">
+                                                    type="text"  [ngClass]="{ 'is-invalid': submitted && f.ville.errors }">
+                                              <div *ngIf="submitted && f.ville.errors" class="invalid-feedback">
+                                                <div *ngIf="f.ville.errors.required">ville required</div>
+                                              </div>
                                                 <label class="label--desc">Ville</label>
                                             </div>
                                         </div>
@@ -95,14 +116,18 @@
                                 <div class="value">
                                     <div class="row row-space">
                                         <div class="col-2">
+
                                             <textarea required formControlName="description" class="input--style-8"
-                                                type="text"></textarea>
+                                                type="text" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
+                                          <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                                            <div *ngIf="f.description.errors.required">description required</div>
+                                          </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            
+
                         </div>
                     </div>
                 </div>
