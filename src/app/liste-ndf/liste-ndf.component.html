@@ -1,62 +1,68 @@
 <div class="container">
 
-    <section class="vh-100" >
-      
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-md-12 col-xl-100">
+  <section class="vh-100" >
+    
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-12 col-xl-100">
 
-            <div class="page-wrapper bg-gra-03">
-              <div class="wrapper wrapper--w790">
-              <div class="card card-5">
+          <div class="page-wrapper bg-gra-03">
+            <div class="wrapper wrapper--w790">
+            <div class="card card-5">
 
-              <div class="card-heading">
-                <h5 class="title">Liste des Demandes de notes de frais</h5>
-              </div>
+            <div class="card-heading">
+              <h5 class="title">Liste des Demandes de notes de frais</h5>
+            </div>
 
-              <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 100%;">
-                <table class="table">
-                   <thead>
-                    <tr>
-                      <th class="th" scope="col">Nom du Collaborateur</th>
-                      <th class="th" scope="col">Montant total</th>
-                      <th class="th" scope="col">Etat</th>
-                      <th class="th" scope="col">Actions</th>
-                    </tr>
-                  </thead>
+            <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 100%;">
+              <table class="table">
+                 <thead>
+                  <tr>
+                    <th class="th" scope="col">ID</th>
+                    <th class="th" scope="col">Nom du collaborateur</th>
+                    <th class="th" scope="col">Montant total</th>
+                    <th class="th" scope="col">Etat</th>
+                    <th class="th" scope="col">Actions</th>
+                  </tr>
+                </thead>
 
-                  <tbody *ngFor="let NDF of NDFs">
+                <tbody *ngFor="let NDF of NDFs">
 
-                    <tr>
-                      <th class="td">
-                      <!--Nom collaborateur-->
-                        <span class="ms-2">{{NDF.nom}}</span>
+                  <tr>
+                    <th class="td">
+                      <!--ID NDF-->
+                        <span class="ms-2">{{NDF.idNDF}}</span>
                       </th>
+                    <th class="td">
+                    <!--Nom collaborateur-->
+                      <span class="ms-2">{{NDF.nom}}</span>
+                    </th>
 
-                      <!--montant NDF-->
-                      <td class="td" >{{NDF.numMission}}</td>
+                    <!--montant NDF-->
+                    <td class="td" >{{NDF.numMission}}</td>
 
-                      <!--Etat-->
-                      <td class="td">
-                        <h6 class="td"></h6>
-                      </td>
+                    <!--Etat-->
+                    <td class="td">
+                      <h6 class="td"></h6>
+                    </td>
+                  
+                    <td class="td">
+                      <a (click)="view(NDF.idNDF)" data-mdb-toggle="tooltip" title="View"><i class="view gg-eye"></i>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                      <a (click)="edit(NDF.idNDF)" data-mdb-toggle="tooltip" title="Edit">&nbsp;&nbsp;<i class="gg-edit-markup"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                      <a (click)="delete(NDF.idNDF)" data-mdb-toggle="tooltip" title="Remove ">&nbsp;&nbsp;<i class="remove gg-trash"></i>&nbsp;</a>
+                    </td>
                     
-                      <td class="td">
-                        <a (click)="view(NDF.idNDF)" data-mdb-toggle="tooltip" title="View"><i class="view gg-eye"></i>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                        <a (click)="edit(NDF.idNDF)" data-mdb-toggle="tooltip" title="Edit">&nbsp;&nbsp;<i class="gg-edit-markup"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                        <a (click)="delete(NDF.idNDF)" data-mdb-toggle="tooltip" title="Remove ">&nbsp;&nbsp;<i class="remove gg-trash"></i>&nbsp;</a>
-                      </td>
-                      
-                    </tr>
-                    <br>
-                  </tbody>
-                </table>
-              </div>
+                  </tr>
+                  <br>
+                </tbody>
+              </table>
+            </div>
 
-            </div>
-            </div>
-            </div>
+          </div>
+          </div>
           </div>
         </div>
-    </section>
+      </div>
+  </section>
 
-  </div>
+</div>
+<div class="container">

@@ -7,15 +7,14 @@ import {Validators} from "@angular/forms";
 
 export class MissionNDFModule {
 
-
-  nom?: String ;
-  idNDF?: String;
+	nom?: String ;
+  	idNDF?: String;
 	numMission?: String;
-  nbNuit?: number
+  	nbNuit?: number
 	montantNuit?: number;
 	montantDP?: number;
 	montantPC?: number;
-  transport?: String;
+  	transport?: String;
 	montantTransport?: number;
 	dateArrivee?: Date;
 	dateRetour?: Date;

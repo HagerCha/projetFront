@@ -28,8 +28,10 @@ export class ViewNDFComponent implements OnInit {
     
       idNDF! :number;
   mission: MissionNDFModule = new MissionNDFModule();
-  constructor(private router: Router, private formbuilder:FormBuilder  ,private  route: ActivatedRoute,private DemandeNDFService: DemandeNDFService ,
-              ) {
+  
+  constructor(private router: Router, private formbuilder:FormBuilder  ,
+    private  route: ActivatedRoute,private DemandeNDFService: DemandeNDFService ,
+  ) {
 
  }
 

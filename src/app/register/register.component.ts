@@ -35,6 +35,7 @@ export class RegisterComponent implements OnInit {
       text: 'Utilisateur ajouté avec succès',
       icon: "success",
     }).then(() => {
+      window.location.reload();
     })
 
    this.authService.register(nom, email,password,passport,prenom,role).subscribe(

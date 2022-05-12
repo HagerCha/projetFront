@@ -16,6 +16,7 @@
                 <table class="table">
                    <thead>
                     <tr>
+                      <th class="th" scope="col">ID</th>
                       <th class="th" scope="col">Nom du Collaborateur</th>
                       <th class="th" scope="col">Description de la mission</th>
                       <th class="th" scope="col">Etat</th>
@@ -25,6 +26,10 @@
                   <tbody *ngFor="let mission of missions">
 
                     <tr class="fw-normal">
+                      <th class="td">
+                        <!--Id mission-->
+                        <span class="ms-2">{{mission.idMission}}</span>
+                      </th>
                       <th class="td">
                         <!--Nom collaborateur-->
                         <span class="ms-2">{{mission.nom}}</span>
