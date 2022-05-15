@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TokenStorageService } from './_services/token-storage.service';
 
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import{ActivatedRoute} from '@angular/router';
 
 
@@ -44,7 +44,6 @@ export class AppComponent {
   logout(event: MouseEvent){
     event.preventDefault();
     this.tokenStorageService.signOut();
-    this.router.navigate(['/home'])
     window.location.reload();
-  }
+    }
 }

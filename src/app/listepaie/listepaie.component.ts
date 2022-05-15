@@ -1,18 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-import swal from 'sweetalert';
-
-import Swal from 'sweetalert2';
+import * as swal from 'sweetalert';
 import { MissionNDFModule } from '../models/mission-ndf.module';
 import { DemandeNDFService } from '../_services/demande-ndf.service';
 
 @Component({
-  selector: 'app-liste-ndf',
-  templateUrl: './liste-ndf.component.html',
-  styleUrls: ['./liste-ndf.component.css']
+  selector: 'app-listepaie',
+  templateUrl: './listepaie.component.html',
+  styleUrls: ['./listepaie.component.css']
 })
-export class ListeNDFComponent implements OnInit {
+export class ListepaieComponent implements OnInit {
 
   constructor(private DemandeNDFService: DemandeNDFService ,private router: Router, ) {
     this.getall();
@@ -28,15 +25,10 @@ export class ListeNDFComponent implements OnInit {
   getall() {
     this.DemandeNDFService.getall().subscribe(
       data => {
-      
-        this.NDFs = data;
+                this.NDFs = data;
       });
   }
 
-
-edit(idNDF:any){
-    this.router.navigateByUrl('/editNDF/'+idNDF)
-}
 view(idNDF:any){
   this.router.navigateByUrl('/viewNDF/'+idNDF)
 }
@@ -45,12 +37,15 @@ delete($idNDF:any) {
     this.DemandeNDFService.delete($idNDF).subscribe(data => {
 
     });
-    swal({
+    /*swal({
       icon: "success",
       text: 'Demande de note de frais supprimée',
     }).then(() => {
       window.location.reload();
-  })
+  })*/
+  window.location.reload();
+
   }
+
 
 }

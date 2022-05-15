@@ -34,14 +34,13 @@ export class DemandeNDFComponent implements OnInit {
       numMission: [null ,Validators.required],
       nbNuit: [null,Validators.required],
       montantNuit: [null,Validators.required],
-      montantDP: [null, Validators.required],
-      montantPC: [null, Validators.required],
       transport: [null, Validators.required],
       montantTransport: [null, Validators.required],
       dateArrivee: [null, Validators.required],
       dateRetour: [null, Validators.required],
       compagnie: [null, Validators.required],
       montantVoyage: [null, Validators.required],
+      etat: ["En Attente", Validators.required],
 
   })
 
@@ -56,15 +55,13 @@ export class DemandeNDFComponent implements OnInit {
       numMission: this.basicForm.value.numMission,
       nbNuit: this.basicForm.value.nbNuit,
       montantNuit: this.basicForm.value.montantNuit,
-      montantDP: this.basicForm.value.montantDP,
-      montantPC: this.basicForm.value.montantPC,
       transport: this.basicForm.value.transport,
       montantTransport: this.basicForm.value.montantTransport,
       dateArrivee: this.basicForm.value.dateArrivee,
       dateRetour: this.basicForm.value.dateRetour,
       compagnie: this.basicForm.value.compagnie,
       montantVoyage: this.basicForm.value.montantVoyage,
-
+      etat: this.basicForm.value.etat,
 
     }
     if (this.basicForm.invalid) {
@@ -73,12 +70,10 @@ export class DemandeNDFComponent implements OnInit {
     console.log('nbNuit: this.basicForm.value.NbNuit,', this.basicForm.value.nbNuit,)
     this.DemandeNDFService.add(data).subscribe(
       data => {
-
-        console.log('data', data)
       });
       swal({
         title: 'Succès',
-        text: 'Demande de NDF enregistré',
+        text: 'Demande de note de frais enregistré',
         icon: "success",
       }).then(() => {
         window.location.reload();

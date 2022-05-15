@@ -34,7 +34,7 @@
                                         </div>
                                         <div class="col-2">
                                             <div class="input-group-desc">
-                                                <input class="input--style-5" type="text" formControlName="numMission"
+                                                <input step="1" class="input--style-5" type="number" formControlName="numMission"
                                                        [ngClass]="{ 'is-invalid': submitted && f.numMission.errors }" >
                                               <div *ngIf="submitted && f.numMission.errors" class="invalid-feedback">
                                                 <div *ngIf="f.numMission.errors.required">nom required</div>
@@ -53,7 +53,7 @@
                                     <div class="row row-space">
                                         <div class="col-2">
                                             <div class="input-group-desc">
-                                                <input required class="input--style-5" type="number"
+                                                <input step="1" required class="input--style-5" type="number"
                                                     formControlName="nbNuit"
                                                        [ngClass]="{ 'is-invalid': submitted && f.nbNuit.errors }" >
                                               <div *ngIf="submitted && f.nbNuit.errors" class="invalid-feedback">
@@ -76,35 +76,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-row m-b-55">
-                                <div class="name">Repas</div>
-                                <div class="value">
-                                    <div class="row row-space">
-                                        <div class="col-2">
-                                            <div class="input-group-desc">
-                                                <input required class="input--style-5" type="number"
-                                                    formControlName="montantDP"
-                                                       [ngClass]="{ 'is-invalid': submitted && f.montantDP.errors }" >
-                                              <div *ngIf="submitted && f.montantDP.errors" class="invalid-feedback">
-                                                <div *ngIf="f.montantDP.errors.required">Montant Demi-pension érequired</div>
-                                              </div>
-                                                <label class="label--desc">Montant Demi-pension</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-2">
-                                            <div class="input-group-desc">
-                                                <input class="input--style-5" type="number" formControlName="montantPC"
-                                                       [ngClass]="{ 'is-invalid': submitted && f.montantPC.errors }" >
-                                              <div *ngIf="submitted && f.montantPC.errors" class="invalid-feedback">
-                                                <div *ngIf="f.montantPC.errors.required">Montant Pension Complèteérequired</div>
-                                              </div>
-                                                <label class="label--desc">Montant Pension Complète</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            
                             <div class="form-row m-b-55">
                                 <div class="name">Déplacement</div>
                                 <div class="value">
@@ -191,19 +163,6 @@
                                                 <div *ngIf="f.montantVoyage.errors.required">Montant Demandé pour le vol required</div>
                                               </div>
                                                 <label class="label--desc">Montant Demandé pour le vol</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-row m-b-55">
-                                <div class="name">Montant total des frais</div>
-                                <div class="value">
-                                    <div class="row row-space">
-                                        <div class="col-2">
-                                            <div class="input-group-desc">
-                                                <input class="input--style-5" type="text" formControlName="total" readonly required>
                                             </div>
                                         </div>
                                     </div>

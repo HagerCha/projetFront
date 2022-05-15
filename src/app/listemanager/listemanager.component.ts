@@ -1,22 +1,16 @@
-import { Component, Injectable, OnInit } from '@angular/core';
-import {TokenStorageService} from "../_services/token-storage.service";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import * as swal from 'sweetalert';
 import Swal from 'sweetalert2';
-import {ActivatedRoute, Route, Router} from "@angular/router";
-
-import {DemandeMissionService} from "../_services/demande-mission.service";
-import {MissionModel} from "../models/mission.model";
-import swal from 'sweetalert';
-
-@Injectable({
-  providedIn:'root'
-})
+import { MissionModel } from '../models/mission.model';
+import { DemandeMissionService } from '../_services/demande-mission.service';
 
 @Component({
-  selector: 'app-liste-demande',
-  templateUrl: './liste-demande.component.html',
-  styleUrls: ['./liste-demande.component.css']
+  selector: 'app-listemanager',
+  templateUrl: './listemanager.component.html',
+  styleUrls: ['./listemanager.component.css']
 })
-export class ListeDemandeComponent implements OnInit {
+export class ListemanagerComponent implements OnInit {
 
   constructor(private DemandeMissionService: DemandeMissionService ,private router: Router, ) {
     this.getall();
@@ -39,10 +33,6 @@ export class ListeDemandeComponent implements OnInit {
       });
   }
 
-
-edit(idmission:any){
-    this.router.navigateByUrl('/editM/'+idmission)
-}
 view(idmission:any){
   this.router.navigateByUrl('/view/'+idmission)
 }
@@ -51,12 +41,14 @@ delete($idMission:any) {
     this.DemandeMissionService.delete($idMission).subscribe(data => {
 
     });
-    swal({
+    /*swal({
       icon: "success",
       text: 'Demande de mission supprimée',
     }).then(() => {
       window.location.reload();
-  })
+  })*/
+  window.location.reload();
+
   }
 
 

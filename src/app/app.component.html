@@ -18,11 +18,17 @@
       <li class="nav-item" *ngIf="showCollaborateurBoard">
         <a class="nav-link" routerLink="NDF">Demande de note de frais</a>
       </li>
-      <li class="nav-item" *ngIf="showCollaborateurBoard || showManagerBoard">
+      <li class="nav-item" *ngIf="showCollaborateurBoard">
         <a class="nav-link" routerLink="listeM">Liste Missions</a>
       </li>
-      <li class="nav-item" *ngIf="showCollaborateurBoard || showPaieBoard">
+      <li class="nav-item" *ngIf="showManagerBoard">
+        <a class="nav-link" routerLink="totalMission">Liste Missions</a>
+      </li>
+      <li class="nav-item" *ngIf="showCollaborateurBoard">
         <a class="nav-link" routerLink="listeNDF">Liste notes de frais</a>
+      </li>
+      <li class="nav-item" *ngIf="showPaieBoard">
+        <a class="nav-link" routerLink="totalNDF">Liste notes de frais</a>
       </li>
       <li class="nav-item" *ngIf="showAssistBoard">
         <a class="nav-link" routerLink="admin">Reservations</a>
@@ -41,7 +47,7 @@
         <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
       </li>
       <li class="nav-item">
-        <a href class="nav-link" (click)="logout($event)">LogOut</a>
+        <a href class="nav-link" (click)="logout($event)"  routerLink="home">LogOut</a>
       </li>
     </ul>
   </nav>

@@ -9,15 +9,16 @@ export class MissionNDFModule {
 
 	nom?: String ;
   	idNDF?: String;
-	numMission?: String;
+	numMission?: number;
   	nbNuit?: number
 	montantNuit?: number;
-	montantDP?: number;
-	montantPC?: number;
-  	transport?: String;
+	transport?: String;
 	montantTransport?: number;
 	dateArrivee?: Date;
 	dateRetour?: Date;
 	compagnie?: String;
 	montantVoyage?: number;
+	total!: number;
+    etat!: String;
+
  }

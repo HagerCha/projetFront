@@ -34,14 +34,15 @@ export class DemandeNDFService {
       numMission: ndf.numMission,
       nbNuit: ndf.nbNuit,
       montantNuit: ndf.montantNuit,
-      montantDP: ndf.montantDP,
-      montantPC: ndf.montantPC,
       transport: ndf.transport,
       montantTransport: ndf.montantTransport,
       dateArrivee: ndf.dateArrivee,
       dateRetour: ndf.dateRetour,
       compagnie: ndf.compagnie,
       montantVoyage: ndf.montantVoyage,
+      total: ndf.total,
+      etat: ndf.etat,
+
     }, this.httpOptions);
   }
 
@@ -58,14 +59,14 @@ export class DemandeNDFService {
       numMission: NDFUpdate.numMission,
       NbNuit: NDFUpdate.NbNuit,
       montantNuit: NDFUpdate.montantNuit,
-      montantDP: NDFUpdate.montantDP,
-      montantPC: NDFUpdate.montantPC,
       transport: NDFUpdate.transport,
       montantTransport: NDFUpdate.montantTransport,
       DateArrivee: NDFUpdate.DateArrivee,
       DateRetour: NDFUpdate.DateRetour,
       compagnie: NDFUpdate.compagnie,
       montantVoyage: NDFUpdate.montantVoyage,
+      total: NDFUpdate.total,
+      etat: NDFUpdate.etat,
     }, this.httpOptions);
   }
 

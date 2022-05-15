@@ -10,6 +10,7 @@
   .card-5 .card-heading {
     padding: 50px 0;
     background: linear-gradient(to right, #808eb6, #051746);
+    
   }
 
   .card {
@@ -46,9 +47,9 @@
   }
   
   .wrapper {
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0.4%;
     height: 100%;
   }
 
@@ -60,7 +61,6 @@
 
   .td {
     padding-top: 4%;
-    padding-right: 1%;
   }
 
   .gg-trash {

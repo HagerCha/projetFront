@@ -13,14 +13,17 @@ import { MissionNDFModule } from '../models/mission-ndf.module';
 })
 export class EditNDFComponent implements OnInit {
 
-  nom!:String ;
-
-  passport!: String;
-  dateDeDebut!:Date ;
-  description!: String;
-  dateDeFin!: Date;
-  pays!:String ;
-  ville!:String ;
+  nom?: String ;
+	numMission?: number;
+  nbNuit?: number
+	montantNuit?: number;
+	transport?: String;
+	montantTransport?: number;
+	dateArrivee?: Date;
+	dateRetour?: Date;
+	compagnie?: String;
+	montantVoyage?: number;
+	total!: number;
   etat!: String;
 
   basicForm!:FormGroup;
@@ -39,14 +42,16 @@ export class EditNDFComponent implements OnInit {
       numMission: [null ,Validators.required],
       nbNuit: [null,Validators.required],
       montantNuit: [null,Validators.required],
-      montantDP: [null, Validators.required],
-      montantPC: [null, Validators.required],
       transport: [null, Validators.required],
       montantTransport: [null, Validators.required],
       dateArrivee: [null, Validators.required],
       dateRetour: [null, Validators.required],
       compagnie: [null, Validators.required],
       montantVoyage: [null, Validators.required],
+      total: [null, Validators.required],
+      etat: [null, Validators.required],
+      
+
     })
 
     this.idNDF = this.route.snapshot.params['idNDF'];
@@ -56,15 +61,15 @@ export class EditNDFComponent implements OnInit {
       this.basicForm.controls.numMission.setValue(data?.numMission);
       this.basicForm.controls.nbNuit.setValue(data?.nbNuit);
       this.basicForm.controls.montantNuit.setValue(data?.montantNuit);
-      this.basicForm.controls.montantDP.setValue(data?.montantDP);
-      this.basicForm.controls.montantPC.setValue(data?.montantPC);
       this.basicForm.controls.transport.setValue(data?.transport);
       this.basicForm.controls.montantTransport.setValue(data?.montantTransport);
       this.basicForm.controls.dateArrivee.setValue(data?.dateArrivee);
       this.basicForm.controls.dateRetour.setValue(data?.dateRetour);
       this.basicForm.controls.compagnie.setValue(data?.compagnie);
       this.basicForm.controls.montantVoyage.setValue(data?.montantVoyage);
-
+      this.basicForm.controls.total.setValue(data?.total);
+      this.basicForm.controls.etat.setValue(data?.etat);
+      
     })
 
   }
@@ -74,14 +79,15 @@ export class EditNDFComponent implements OnInit {
     numMission: this.basicForm.controls.numMission.value,
     nbNuit: this.basicForm.controls.nbNuit.value,
     montantNuit: this.basicForm.controls.montantNuit.value,
-    montantDP: this.basicForm.controls.montantDP.value,
-    montantPC: this.basicForm.controls.montantPC.value,
     transport: this.basicForm.controls.transport.value,
     montantTransport: this.basicForm.controls.montantTransport.value,
     dateArrivee: this.basicForm.controls.dateArrivee.value,
     dateRetour: this.basicForm.controls.dateRetour.value,
     compagnie: this.basicForm.controls.compagnie.value,
     montantVoyage: this.basicForm.controls.montantVoyage.value,
+    total: this.basicForm.controls.total.value,
+    etat: this.basicForm.controls.etat.value,
+    
     };
 
 
@@ -90,7 +96,7 @@ export class EditNDFComponent implements OnInit {
       data=>{
     swal({
     title: 'Succès',
-    text: 'Demande de NDF mise à jour',
+    text: 'Demande de note de frais mise à jour',
     icon: "success",
       })
     })

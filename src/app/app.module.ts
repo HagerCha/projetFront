@@ -19,6 +19,8 @@ import { DemandeNDFComponent } from './demande-ndf/demande-ndf.component';
 import { EditNDFComponent } from './edit-ndf/edit-ndf.component';
 import { ListeNDFComponent } from './liste-ndf/liste-ndf.component';
 import { ViewNDFComponent } from './view-ndf/view-ndf.component';
+import { ListemanagerComponent } from './listemanager/listemanager.component';
+import { ListepaieComponent } from './listepaie/listepaie.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { ViewNDFComponent } from './view-ndf/view-ndf.component';
     DemandeNDFComponent,
     EditNDFComponent,
     ListeNDFComponent,
-    ViewNDFComponent
+    ViewNDFComponent,
+    ListemanagerComponent,
+    ListepaieComponent
   ],
   imports: [
     BrowserModule,

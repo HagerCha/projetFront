@@ -14,6 +14,8 @@ import { DemandeNDFComponent } from './demande-ndf/demande-ndf.component';
 import { ListeNDFComponent } from './liste-ndf/liste-ndf.component';
 import { EditNDFComponent } from './edit-ndf/edit-ndf.component';
 import { ViewNDFComponent } from './view-ndf/view-ndf.component';
+import { ListemanagerComponent } from './listemanager/listemanager.component';
+import { ListepaieComponent } from './listepaie/listepaie.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -29,6 +31,8 @@ const routes: Routes = [
   { path: 'listeNDF', component:ListeNDFComponent},
   { path: 'editNDF/:idNDF', component: EditNDFComponent},
   { path: 'viewNDF/:idNDF', component: ViewNDFComponent },
+  { path: 'totalMission', component: ListemanagerComponent},
+  { path: 'totalNDF', component: ListepaieComponent},
 
 ];
 

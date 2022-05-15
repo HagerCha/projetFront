@@ -12,18 +12,18 @@ import { DemandeNDFService } from '../_services/demande-ndf.service';
 export class ViewNDFComponent implements OnInit {
   
       nom!:String ;
-      numMission!: String;
-      nbNuit!:Date ;
-      montantNuit!: String;
-      montantDP!: Date;
-      montantPC!:String ;
+      numMission!: number;
+      nbNuit!: number ;
+      montantNuit!: number;
       transport!:String ;
-      montantTransport!: String;
+      montantTransport!: number;
       dateArrivee!: Date;
       dateRetour!:String ;
       compagnie!:String ;
-      montantVoyage!: String;
-    
+      montantVoyage!: number;
+      total!: number;
+      etat!: String;
+
       basicForm!:FormGroup;
     
       idNDF! :number;
@@ -42,14 +42,16 @@ export class ViewNDFComponent implements OnInit {
       numMission: [null ,Validators.required],
       nbNuit: [null,Validators.required],
       montantNuit: [null,Validators.required],
-      montantDP: [null, Validators.required],
-      montantPC: [null, Validators.required],
       transport: [null, Validators.required],
       montantTransport: [null, Validators.required],
       dateArrivee: [null, Validators.required],
       dateRetour: [null, Validators.required],
       compagnie: [null, Validators.required],
       montantVoyage: [null, Validators.required],
+      total: [null,Validators.required],
+      etat: [null,Validators.required],
+      
+
     })
 
     this.idNDF = this.route.snapshot.params['idNDF'];
@@ -59,14 +61,14 @@ export class ViewNDFComponent implements OnInit {
       this.basicForm.controls.numMission.setValue(data?.numMission);
       this.basicForm.controls.nbNuit.setValue(data?.nbNuit);
       this.basicForm.controls.montantNuit.setValue(data?.montantNuit);
-      this.basicForm.controls.montantDP.setValue(data?.montantDP);
-      this.basicForm.controls.montantPC.setValue(data?.montantPC);
       this.basicForm.controls.transport.setValue(data?.transport);
       this.basicForm.controls.montantTransport.setValue(data?.montantTransport);
       this.basicForm.controls.dateArrivee.setValue(data?.dateArrivee);
       this.basicForm.controls.dateRetour.setValue(data?.dateRetour);
       this.basicForm.controls.compagnie.setValue(data?.compagnie);
       this.basicForm.controls.montantVoyage.setValue(data?.montantVoyage);
+      this.basicForm.controls.total.setValue(data?.total);
+      this.basicForm.controls.etat.setValue(data?.etat);
 
     })
 

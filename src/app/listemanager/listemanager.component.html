@@ -1,0 +1,65 @@
+<div class="container">
+
+    <section class="vh-100" >
+      
+        <div >
+          <div class="col-md-12 col-xl-100">
+  
+            <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+              <div class="wrapper wrapper--w790">
+              <div class="card card-5">
+  
+              <div class="card-heading">
+                  <h5 class="title">Liste des Demandes de mission</h5>
+                </div>
+                <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 100%;">
+                  <table class="table">
+                     <thead>
+                      <tr>
+                        <th class="th" scope="col">ID</th>
+                        <th class="th" scope="col">Nom du Collaborateur</th>
+                        <th class="th" scope="col">Description de la mission</th>
+                        <th class="th" scope="col">Etat</th>
+                        <th class="th" scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let mission of missions">
+  
+                      <tr class="fw-normal">
+                        <th class="td">
+                          <!--Id mission-->
+                          <span class="ms-2">{{mission.idMission}}</span>
+                        </th>
+                        <th class="td">
+                          <!--Nom collaborateur-->
+                          <span class="ms-2">{{mission.nom}}</span>
+                        </th>
+                        <!--description mission-->
+                        <td class="td">{{mission.description}}</td>
+                        <!--etat-->
+                        <td>
+                            <select formControlName="etat" class="input--style-7">
+                                <option value="En attente">En Attente</option>
+                                <option value="Approuvée">Approuvée</option>
+                                <option value="Refusée">Refusé</option>
+                            </select>                       
+                        </td>
+  
+                        <td class="td">
+                          <a (click)="view(mission.idMission)" data-mdb-toggle="tooltip" title="View"><i class="view gg-eye"></i>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                          <a (click)="delete(mission.idMission)" data-mdb-toggle="tooltip" title="Remove ">&nbsp;&nbsp;<i class="remove gg-trash"></i>&nbsp;</a>
+                        </td>
+                      </tr>
+  
+                    </tbody>
+                  </table>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          </div>
+      </section>
+  
+    </div>

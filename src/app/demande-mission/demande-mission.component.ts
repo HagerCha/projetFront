@@ -23,7 +23,7 @@ export class DemandeMissionComponent implements OnInit {
 
 
   constructor(private DemandeMissionService: DemandeMissionService ,private tokenStorage: TokenStorageService
-              , private formbuilder:FormBuilder , private router:Router ) {
+    , private formbuilder:FormBuilder , private router:Router ) {
 
 
   }
@@ -61,8 +61,6 @@ export class DemandeMissionComponent implements OnInit {
       pays: this.basicForm.value.pays,
       ville: this.basicForm.value.ville,
       etat: this.basicForm.value.etat,
-
-
     }
     if (this.basicForm.invalid) {
       return;
