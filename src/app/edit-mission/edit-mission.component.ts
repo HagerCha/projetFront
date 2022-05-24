@@ -57,7 +57,6 @@ export class EditMissionComponent implements OnInit {
       this.basicForm.controls.dateDeDebut.setValue(data?.dateDeDebut);
       this.basicForm.controls.description.setValue(data?.description);
       this.basicForm.controls.dateDeFin.setValue(data?.dateDeFin);
-
       this.basicForm.controls.pays.setValue(data?.pays);
       this.basicForm.controls.ville.setValue(data?.ville);
       this.basicForm.controls.etat.setValue(data?.etat);
@@ -79,7 +78,6 @@ export class EditMissionComponent implements OnInit {
     };
 
 
-   
     this.DemandeMissionService.update(this.idmission,this.mission).subscribe(
       data=>{
     swal({
@@ -87,7 +85,8 @@ export class EditMissionComponent implements OnInit {
     text: 'Demande de mission mise à jour',
     icon: "success",
       })
-    })
+    });
+    this.router.navigateByUrl("listeM");
 
   
 }

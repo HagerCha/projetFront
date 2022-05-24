@@ -28,7 +28,6 @@ export class ListeNDFComponent implements OnInit {
   getall() {
     this.DemandeNDFService.getall().subscribe(
       data => {
-      
         this.NDFs = data;
       });
   }
@@ -43,7 +42,6 @@ view(idNDF:any){
 
 delete($idNDF:any) {
     this.DemandeNDFService.delete($idNDF).subscribe(data => {
-
     });
     swal({
       icon: "success",

@@ -14,8 +14,6 @@ export class ProfileComponent implements OnInit {
 
   constructor(private authService: AuthService, private token: TokenStorageService) { }
 
-  
-  
   ngOnInit(): void {
 
     
@@ -27,5 +25,6 @@ console.log('data',this.data)
     console.log(this.currentUsers)
 
   }
+
   
 }

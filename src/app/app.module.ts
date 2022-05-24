@@ -21,6 +21,7 @@ import { ListeNDFComponent } from './liste-ndf/liste-ndf.component';
 import { ViewNDFComponent } from './view-ndf/view-ndf.component';
 import { ListemanagerComponent } from './listemanager/listemanager.component';
 import { ListepaieComponent } from './listepaie/listepaie.component';
+import { ListeprofilsComponent } from './listeprofils/listeprofils.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ListepaieComponent } from './listepaie/listepaie.component';
     ListeNDFComponent,
     ViewNDFComponent,
     ListemanagerComponent,
-    ListepaieComponent
+    ListepaieComponent,
+    ListeprofilsComponent
   ],
   imports: [
     BrowserModule,

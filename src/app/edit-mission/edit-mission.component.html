@@ -1,60 +1,122 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <source>
-  </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <source>
+</head>
 
 
-  <body>
-          <form  [formGroup]="basicForm"  #form="ngForm"   (ngSubmit)="onSubmit()">
-            <div class="form-group">
-              <label>nom</label>
+<body>
+  <form name="form" [formGroup]="basicForm" #form="ngForm" (ngSubmit)="onSubmit()">
 
-              <input type="text" class="form-control"  formControlName="nom" type="text" >
+      <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+          <div class="wrapper wrapper--w790">
+              <div class="card card-5">
+                  <div class="card-heading">
+                      <h2 class="title">Modification de Mission</h2>
+                  </div>
 
-            </div>
+                  <div class="card-body">
+                      <div class="form-group">
+                          <div class="form-row m-b-55">
 
-            <div class="form-group">
-              <label>passport</label>
-              <input type="text" class="form-control"   formControlName="passport"   >
+                              <div class="name">Données Personnelles</div>
+                              <div class="value">
+                                  <div class="row row-space">
+                                      <div class="col-2">
+                                          <div class="input-group-desc">
+                                              <input required class="input--style-5" type="text"
+                                                  formControlName="nom">
+                                            
+                                              <label class="label--desc">Nom</label>
+                                          </div>
+                                      </div>
+                                      <div class="col-2">
+                                          <div class="input-group-desc">
+                                              <input class="input--style-5" type="text" formControlName="passport"
+                                                     >
+                                            
+                                              <label class="label--desc">N° Passport</label>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
 
-            </div>
-            <div class="form-group">
-              <label>DateDeDebut</label>
-              <input type="date" class="form-control"  formControlName="dateDeDebut" >
-
-            </div>
-
-            <div class="form-group">
-              <label>DateFin</label>
-              <input type="date" class="form-control" formControlName="dateDeFin" >
-
-            </div>
 
 
+                          <div class="form-row m-b-55">
+                              <div class="name">Données Mission</div>
+                              <div class="value">
+                                  <div class="row row-space">
+                                      <div class="col-2">
+                                          <div class="input-group-desc">
+                                              <input required formControlName="dateDeDebut" class="input--style-7"
+                                                  type="date" id="start" name="trip-start" value="2021-01-01"
+                                                  min="2022-01-01" max="2050-12-31">
+                                            
+                                              <label class="label--desc">Date Début</label>
+                                          </div>
+                                      </div>
+                                      <div class="col-2">
+                                          <div class="input-group-desc">
+                                              <input required formControlName="dateDeFin" class="input--style-7"
+                                                  type="date" id="end" name="trip-start" value="2021-01-01"
+                                                  min="2022-01-01" max="2050-12-31">
+                                            
+                                              <label class="label--desc">Date Fin</label>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
 
-            <div class="form-group">
-              <label>Description</label>
-              <input type="text" class="form-control" formControlName="description"  >
+                          <div class="form-row m-b-55">
+                              <div class="name">Lieu</div>
+                              <div class="value">
+                                  <div class="row row-space">
+                                      <div class="col-2">
+                                          <div class="input-group-desc">
+                                              <input formControlName="pays" class="input--style-5" type="text"
+                                         >
 
-            </div>
-            <div class="form-group">
-              <label>Pays</label>
-              <input type="text" class="form-control"  formControlName="pays"  >
+                                            
+                                              <label class="label--desc">Pays</label>
+                                          </div>
+                                      </div>
+                                      <div class="col-2">
+                                          <div class="input-group-desc">
+                                              <input required formControlName="ville" class="input--style-5"
+                                                  type="text">
+                                            
+                                              <label class="label--desc">Ville</label>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
 
-            </div>
-            <div class="form-group">
-            <label>Ville</label>
-            <input type="text" class="form-control" formControlName="ville"  >
+                          <br>
+                          <br>
+                          <div class="form-row m-b-55">
+                              <div class="name">Description</div>
+                              <div class="value">
+                                  <div class="row row-space">
+                                      <div class="col-2">
+
+                                          <textarea required formControlName="description" class="input--style-8"
+                                              type="text" ></textarea>
+                                        
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+
+                      </div>
+                  </div>
+              </div>
           </div>
-          <div class="form-group">
-            <label>Etat</label>
-            <input type="text" class="form-control" formControlName="etat"  >
-          </div>
-
-      </form>
-          <button class="btn btn--radius-2 btn--red" type="submit" (click)="onSubmit()" >Update</button>
-
-  </body>
-
-
+      </div>
+  </form>
+<button class="btn btn--radius-2 btn--red" type="submit" (click)="onSubmit()">Enregistrer</button>
+</body>

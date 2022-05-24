@@ -63,6 +63,19 @@
     padding-right: 1%;
   }
 
+  .tdDesc {
+    padding-right: 5%;
+  }
+
+  .tdEtat {
+    padding-left: -50px;
+  }
+
+  .tdActions {
+    padding-left: -50px;
+    padding-right: -50px;
+  }
+
   .gg-trash {
     box-sizing: border-box;
     position: relative;

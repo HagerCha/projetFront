@@ -84,14 +84,12 @@
                                     <div class="row row-space">
                                         <div class="col-2">
                                             <div class="input-group-desc">
-                                                <input   formControlName="pays" class="input--style-5"
-                                                    type="text"
-                                                         [ngClass]="{ 'is-invalid': submitted && f.pays.errors }" >
+                                                <input formControlName="pays" class="input--style-5" type="text"
+                                                [ngClass]="{ 'is-invalid': submitted && f.pays.errors }" >
 
                                               <div *ngIf="submitted && f.pays.errors" class="invalid-feedback">
                                                 <div *ngIf="f.pays.errors.required">pays required</div>
                                               </div>
-
                                                 <label class="label--desc">Pays</label>
                                             </div>
                                         </div>

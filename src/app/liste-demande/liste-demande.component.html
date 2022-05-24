@@ -35,13 +35,13 @@
                         <span class="ms-2">{{mission.nom}}</span>
                       </th>
                       <!--description mission-->
-                      <td class="td">{{mission.description}}</td>
+                      <td class="tdDesc">{{mission.description}}</td>
                       <!--etat-->
                       <td>
-                        <h6 class="td"><span class="">{{mission.etat}}</span></h6>
+                        <h6 class="tdEtat"><span class="">{{mission.etat}}</span></h6>
                       </td>
 
-                      <td class="td">
+                      <td class="tdActions">
                         <a (click)="view(mission.idMission)" data-mdb-toggle="tooltip" title="View"><i class="view gg-eye"></i>&nbsp;&nbsp;&nbsp;&nbsp;</a>
                         <a (click)="edit(mission.idMission)" data-mdb-toggle="tooltip" title="Edit">&nbsp;&nbsp;<i class="gg-edit-markup"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                         <a (click)="delete(mission.idMission)" data-mdb-toggle="tooltip" title="Remove ">&nbsp;&nbsp;<i class="remove gg-trash"></i>&nbsp;</a>

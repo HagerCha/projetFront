@@ -51,7 +51,6 @@ export class EditNDFComponent implements OnInit {
       total: [null, Validators.required],
       etat: [null, Validators.required],
       
-
     })
 
     this.idNDF = this.route.snapshot.params['idNDF'];
@@ -87,9 +86,7 @@ export class EditNDFComponent implements OnInit {
     montantVoyage: this.basicForm.controls.montantVoyage.value,
     total: this.basicForm.controls.total.value,
     etat: this.basicForm.controls.etat.value,
-    
     };
-
 
    
     this.DemandeNDFService.update(this.idNDF,this.NDF).subscribe(

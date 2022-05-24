@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import * as swal from 'sweetalert';
+import swal from 'sweetalert';
 import Swal from 'sweetalert2';
 import { MissionModel } from '../models/mission.model';
 import { DemandeMissionService } from '../_services/demande-mission.service';
@@ -41,12 +41,12 @@ delete($idMission:any) {
     this.DemandeMissionService.delete($idMission).subscribe(data => {
 
     });
-    /*swal({
+    swal({
       icon: "success",
       text: 'Demande de mission supprimée',
     }).then(() => {
       window.location.reload();
-  })*/
+  })
   window.location.reload();
 
   }

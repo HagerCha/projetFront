@@ -16,6 +16,7 @@ import { EditNDFComponent } from './edit-ndf/edit-ndf.component';
 import { ViewNDFComponent } from './view-ndf/view-ndf.component';
 import { ListemanagerComponent } from './listemanager/listemanager.component';
 import { ListepaieComponent } from './listepaie/listepaie.component';
+import { ListeprofilsComponent } from './listeprofils/listeprofils.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,7 +24,7 @@ const routes: Routes = [
   { path: 'ajout', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'miss', component: DemandeMissionComponent},
-  { path: 'profiles', component: BoardAdminComponent },
+  { path: 'listeprofils', component: BoardAdminComponent },
   { path: 'listeM', component: ListeDemandeComponent },
   { path: 'editM/:idmission', component: EditMissionComponent},
   { path: 'view/:idmission', component: ViewDemandeComponent},

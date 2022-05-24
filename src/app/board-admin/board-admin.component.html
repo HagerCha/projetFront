@@ -19,7 +19,7 @@
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody *ngFor="let listProfile of listeProfile" >
                   <tr class="fw-normal">
                     <th>
                       <span class="ms-2"></span>
@@ -33,17 +33,16 @@
                   </tr>
                   <tr class="fw-normal">
                     <th>
-                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-10.webp" class="shadow-1-strong rounded-circle" alt="avatar 1"
-                        style="width: 55px; height: auto;">
-                      <span class="ms-2">"NOM"</span>
+                     
+                      <span class="ms-2">{{listProfile.nom}}</span>
                     </th>
-                    <td class="align-middle">"ROLE"</td>
+                    <td class="align-middle" >{{listProfile.roles[0].name}}</td>
                     <td class="align-middle">
-                      <a data-mdb-toggle="tooltip" title="Done">View<i class="fas fa-check text-success me-3"></i></a>
+                      <a data-mdb-toggle="tooltip" title="Done">View <i class="fas fa-check text-success me-3"></i></a>
                       <br>
                       <a data-mdb-toggle="tooltip" title="Done">Edit<i class="fas fa-check text-success me-3"></i></a>
                       <br>
-                      <a data-mdb-toggle="tooltip" title="Remove ">Remove<i class="fas fa-trash-alt text-danger"></i></a>
+                      <a (click)="delete(listProfile.id)" data-mdb-toggle="tooltip" title="Remove " *ngIf="listProfile.roles[0].name!='ROLE_ADMIN'">&nbsp;&nbsp;<i class="remove gg-trash">Remove</i>&nbsp;</a>
                     </td>
                     </tr>                                                   
                   </tbody>
