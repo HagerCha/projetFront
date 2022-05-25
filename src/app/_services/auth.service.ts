@@ -50,6 +50,7 @@ export class AuthService {
   delete(idUser: any) {
     return this.http.delete(`${AUTH_API + 'DeleteUser'}/${idUser}`,httpOptions);
   }
+  
   findById(idUser: any): Observable<any> {
     return this.http.get(`${AUTH_API  + 'UserByIdUser'}/${idUser}`, httpOptions);
   }

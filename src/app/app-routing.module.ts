@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { RegisterComponent } from './register/register.component';
@@ -17,6 +17,7 @@ import { ViewNDFComponent } from './view-ndf/view-ndf.component';
 import { ListemanagerComponent } from './listemanager/listemanager.component';
 import { ListepaieComponent } from './listepaie/listepaie.component';
 import { ListeprofilsComponent } from './listeprofils/listeprofils.component';
+import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'viewNDF/:idNDF', component: ViewNDFComponent },
   { path: 'totalMission', component: ListemanagerComponent},
   { path: 'totalNDF', component: ListepaieComponent},
+  { path: 'viewprofile/:id', component : ViewprofileComponent},
 
 ];
 

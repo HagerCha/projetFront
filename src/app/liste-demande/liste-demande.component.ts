@@ -43,6 +43,7 @@ export class ListeDemandeComponent implements OnInit {
 edit(idmission:any){
     this.router.navigateByUrl('/editM/'+idmission)
 }
+
 view(idmission:any){
   this.router.navigateByUrl('/view/'+idmission)
 }

@@ -3,6 +3,7 @@ import { UserService } from '../_services/user.service';
 import {AuthService} from "../_services/auth.service";
 import Swal from 'sweetalert2';
 import swal from 'sweetalert';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class BoardAdminComponent implements OnInit {
   content?: string;
   listeProfile:any;
 
-  constructor(private userService: UserService,private authService: AuthService) { }
+  constructor(private userService: UserService,private authService: AuthService, private router: Router) { }
   getall() {
     this.authService.getall().subscribe(
       data => {
@@ -44,6 +45,10 @@ export class BoardAdminComponent implements OnInit {
     this.getall();
   }
 
+  view(id:any){
+    this.router.navigateByUrl('/viewprofile/'+id)
+  }
+
   delete($id:any) {
 
     this.authService.delete($id).subscribe(data => {
@@ -57,6 +62,7 @@ export class BoardAdminComponent implements OnInit {
       window.location.reload();
   })
 }
+
 
 
 

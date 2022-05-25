@@ -37,14 +37,15 @@
                         <!--description mission-->
                         <td class="td">{{mission.description}}</td>
                         <!--etat-->
+                       <!-- <form name="form" [formGroup]="basicForm" #form="ngForm" (ngSubmit)="onSubmit()">-->
                         <td>
                             <select formControlName="etat" class="input--style-7">
-                                <option value="En attente">En Attente</option>
+                                <option value="En attente">En attente</option>
                                 <option value="Approuvée">Approuvée</option>
                                 <option value="Refusée">Refusé</option>
                             </select>   
                             <br>
-                            <button type="submit">Update Etat</button>
+                            <!--<button (click)="onSubmit()" type="submit">Update Etat</button>-->
        
                         </td>
   

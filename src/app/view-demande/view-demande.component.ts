@@ -60,8 +60,4 @@ export class ViewDemandeComponent implements OnInit {
 
   }
 
-
-   
-
-  
 }

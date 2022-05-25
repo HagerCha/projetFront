@@ -38,7 +38,7 @@
                     </th>
                     <td class="align-middle" >{{listProfile.roles[0].name}}</td>
                     <td class="align-middle">
-                      <a data-mdb-toggle="tooltip" title="Done">View <i class="fas fa-check text-success me-3"></i></a>
+                      <a (click)="view(listProfile.id)" data-mdb-toggle="tooltip" title="View">View<i class="view gg-eye"></i>&nbsp;&nbsp;&nbsp;&nbsp;</a>
                       <br>
                       <a data-mdb-toggle="tooltip" title="Done">Edit<i class="fas fa-check text-success me-3"></i></a>
                       <br>
