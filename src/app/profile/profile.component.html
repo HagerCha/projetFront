@@ -1,32 +1,65 @@
-<div class="container" *ngIf="currentUser; else loggedOut">
-  <header class="jumbotron">
-    <h3>
-      <strong>{{ currentUser.username }}</strong> Profile
-    </h3>
-  </header>
-  
-  <p>
-    <strong>Email: </strong>
-    {{ currentUser.email }}
-      <br>
-      <strong>Nom: </strong>
-      {{ currentUser.nom }}
-      <br>
-      <strong>prenom: </strong>
-      {{ currentUser.prenom }}
-      <br>
-      <strong>passport: </strong>
-      {{ currentUser.passport }}
-  </p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <source>
+</head>
 
-  <strong>Role: </strong>
-  <ul>
-    <li *ngFor="let role of currentUser.roles">
-      {{ role }}
-    </li>
-  </ul>
-</div>
 
-<ng-template #loggedOut>
-  Please login.
-</ng-template>
+<body>
+  <form name="form">
+
+      <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+          <div class="wrapper wrapper--w790">
+              <div class="card card-5">
+                  <div class="card-heading">
+                      <h2 class="title">Votre Profil</h2>
+                  </div>
+                  
+                  <div class="card-body">
+                      <div class="form-group">
+                          <div class="form-row m-b-55">
+                              <div class="value">
+                                  <div class="row row-space">
+                                      <div class="col-2">
+                                          <div class="input-group-desc">
+                                            <strong  class="input--style-5">Prénom: </strong>
+                                            <a class="input--style-5"> {{ currentUser.prenom }} </a>
+                                            <br>
+                                            <br>
+                                            <strong  class="input--style-5">Nom: </strong>
+                                            <a class="input--style-5"> {{ currentUser.nom }} </a>
+                                            <br>
+                                            <br>
+                                            <strong  class="input--style-5">Email </strong>
+                                            <a class="input--style-5"> {{ currentUser.email }} </a>
+                                            <br>
+                                            <br>
+                                            <strong  class="input--style-5">Passport: </strong>
+                                            <a class="input--style-5"> {{ currentUser.passport }} </a>
+                                            <br>
+                                            <br>
+                                            
+                                            <strong class="input--style-5">Rôle: </strong>
+                                            <ul>
+                                              <li class="input--style-5" *ngFor="let role of currentUser.roles">
+                                                <br>
+                                                &nbsp;{{ currentUser.role[0].name }}
+                                              </li>
+                                            </ul>
+                                          </div>
+                                      </div>
+                                      
+                                  </div>
+                              </div>
+                          </div>                                                    
+                      </div>
+                  </div>
+                  <ng-template #loggedOut>
+                    Please login.
+                  </ng-template>
+              </div>
+          </div>
+      </div>
+  </form>
+  <button (click)="editProfil(currentUser.id)" class="btn btn--radius-2 btn--red" type="submit">Modifier votre profil</button>
+</body>

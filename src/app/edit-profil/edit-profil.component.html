@@ -1,0 +1,70 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <source>
+  </head>
+  
+  
+  <body>
+    <form name="form" [formGroup]="basicForm" #form="ngForm" (ngSubmit)="onSubmit()">
+  
+        <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+            <div class="wrapper wrapper--w790">
+                <div class="card card-5">
+                    <div class="card-heading">
+                        <h2 class="title">Modification du profil</h2>
+                    </div>
+  
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="form-row m-b-55">
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input required class="input--style-5" type="text"
+                                                    formControlName="nom">
+                                                <label class="label--desc">Nom</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" formControlName="prenom">
+                                                <label class="label--desc">Prénom</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+  
+                         
+                            <div class="form-row m-b-55">
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input required formControlName="email" class="input--style-5"
+                                                    type="text">
+                                              
+                                                <label class="label--desc">Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input formControlName="passport" class="input--style-5" type="text">                                              
+                                                <label class="label--desc">Passport</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <button class="btn btn--radius-2 btn--red" type="submit" (click)="onSubmit()">Enregistrer</button>
+</body>

@@ -18,11 +18,11 @@ export class EditMissionComponent implements OnInit {
   nom!:String ;
 
   passport!: String;
-  dateDeDebut!:Date ;
+  dateDeDebut!: Date ;
   description!: String;
   dateDeFin!: Date;
-  pays!:String ;
-  ville!:String ;
+  pays!: String ;
+  ville!: String ;
   etat!: String;
 
   basicForm!:FormGroup;

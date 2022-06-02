@@ -25,7 +25,6 @@ export class BoardAdminComponent implements OnInit {
 
         console.log('data',data)
         this.listeProfile=data
-        //if(this.missions.id)
         }
      // }
       });
@@ -49,6 +48,10 @@ export class BoardAdminComponent implements OnInit {
     this.router.navigateByUrl('/viewprofile/'+id)
   }
 
+  edit(id:any){
+    this.router.navigateByUrl('/editProfil/'+id)
+  }
+
   delete($id:any) {
 
     this.authService.delete($id).subscribe(data => {
@@ -57,7 +60,7 @@ export class BoardAdminComponent implements OnInit {
     });
     swal({
       icon: "success",
-      text: ' user supprimée',
+      text: 'Utilisateur supprimé',
     }).then(() => {
       window.location.reload();
   })

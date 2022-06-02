@@ -1,22 +1,30 @@
+
+
+
+
+
 <div class="container">
 
-  <section class="vh-100" style="background-color: #eee;">
-    <div class="container py-5 h-200">
-      <div class="row d-flex justify-content-center align-items-center h-200">
+  <section class="vh-100" >
+    
+      <div >
         <div class="col-md-12 col-xl-100">
-  
-          <div class="card">
+
+          <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+            <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+
             <div class="card-heading">
-              <h5 class="title"><i class="fas fa-tasks me-2"></i>Liste des Profiles</h5>
-            </div>
-            <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 600px">
-  
+                <h5 class="title">Liste des profils</h5>
+              </div>
+              <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 100%;">
+               
               <table class="table mb-0">
                 <thead>
                   <tr>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Rôle</th>
-                    <th scope="col">Actions</th>
+                    <th class="th" scope="col">Nom</th>
+                    <th class="th" scope="col">Rôle</th>
+                    <th class="th" scope="col">Actions</th>
                   </tr>
                 </thead>
                 <tbody *ngFor="let listProfile of listeProfile" >
@@ -34,27 +42,24 @@
                   <tr class="fw-normal">
                     <th>
                      
-                      <span class="ms-2">{{listProfile.nom}}</span>
+                      <span class="ms-2">{{listProfile.nom}} {{listProfile.prenom}} </span>
                     </th>
                     <td class="align-middle" >{{listProfile.roles[0].name}}</td>
                     <td class="align-middle">
-                      <a (click)="view(listProfile.id)" data-mdb-toggle="tooltip" title="View">View<i class="view gg-eye"></i>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                      <br>
-                      <a data-mdb-toggle="tooltip" title="Done">Edit<i class="fas fa-check text-success me-3"></i></a>
-                      <br>
-                      <a (click)="delete(listProfile.id)" data-mdb-toggle="tooltip" title="Remove " *ngIf="listProfile.roles[0].name!='ROLE_ADMIN'">&nbsp;&nbsp;<i class="remove gg-trash">Remove</i>&nbsp;</a>
+                      <a (click)="view(listProfile.id)" data-mdb-toggle="tooltip" title="View"><i class="view gg-eye"></i>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                      <a (click)="edit(listeProfile.id)" data-mdb-toggle="tooltip" title="Edit" *ngIf="listProfile.roles[0].name!='ROLE_ADMIN'">&nbsp;&nbsp;<i class="gg-edit-markup"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                      <a (click)="delete(listProfile.id)" data-mdb-toggle="tooltip" title="Remove " *ngIf="listProfile.roles[0].name!='ROLE_ADMIN'">&nbsp;&nbsp;<i class="remove gg-trash"></i>&nbsp;</a>
                     </td>
                     </tr>                                                   
                   </tbody>
               </table>
-  
+
+              </div>
             </div>
-            
           </div>
-  
         </div>
       </div>
-    </div>
-  </section>
+        </div>
+    </section>
 
-</div>
+  </div>

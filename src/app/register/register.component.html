@@ -55,7 +55,6 @@
               </div>
             </div>
 
-
             <!--Email-->
             <div class="form-row m-b-55">
               <label class="name" for="email">Email</label>
@@ -66,9 +65,7 @@
                            #email="ngModel" />
                     <div class="alert-danger" *ngIf="email.errors && f.submitted">
                       <div *ngIf="email.errors.required">Email est obligatoire</div>
-                      <div *ngIf="email.errors.email">
-                        Email doit être valide
-                      </div>
+                      <div *ngIf="email.errors?.pattern">Email doit être valide</div>
                     </div>
                   </div>
                 </div>
@@ -120,7 +117,6 @@
                 <option value="Manager">Manager</option>
                 <option value="Collaborateur">Collaborateur</option>
                 <option value="Gestionnaire de Paie">Gestionnaire de Paie</option>
-                <option value="Assistant de Reservation">Assistant de Réservation</option>
               </select>
             </div>
 

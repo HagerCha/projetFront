@@ -39,13 +39,14 @@
                         <!--etat-->
                        <!-- <form name="form" [formGroup]="basicForm" #form="ngForm" (ngSubmit)="onSubmit()">-->
                         <td>
-                            <select formControlName="etat" class="input--style-7">
+                            <select formControlName="etat" class="input--style-7" name="En Attente" aria-placeholder="En Attente">
                                 <option value="En attente">En attente</option>
                                 <option value="Approuvée">Approuvée</option>
                                 <option value="Refusée">Refusé</option>
                             </select>   
                             <br>
-                            <!--<button (click)="onSubmit()" type="submit">Update Etat</button>-->
+                            <br>
+                            <button type="submit">Update Etat</button>
        
                         </td>
   

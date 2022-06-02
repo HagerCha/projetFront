@@ -21,16 +21,6 @@ export class ViewprofileComponent implements OnInit {
       this.currentUser=data;
 
 
-      /*this.basicForm.controls.nom.setValue(data?.nom);
-      this.basicForm.controls.passport.setValue(data?.passport);
-      this.basicForm.controls.dateDeDebut.setValue(data?.dateDeDebut);
-      this.basicForm.controls.description.setValue(data?.description);
-      this.basicForm.controls.dateDeFin.setValue(data?.dateDeFin);
-
-      this.basicForm.controls.pays.setValue(data?.pays);
-      this.basicForm.controls.ville.setValue(data?.ville);
-      this.basicForm.controls.etat.setValue(data?.etat);*/
-
     })
 
 }

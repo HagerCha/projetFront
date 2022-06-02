@@ -43,12 +43,23 @@ export class AuthService {
       password:password,
       prenom:prenom,
       passport:passport,
-      role:role
+      role:role,
+      
 
     }, httpOptions);
   }
   delete(idUser: any) {
     return this.http.delete(`${AUTH_API + 'DeleteUser'}/${idUser}`,httpOptions);
+  }
+
+  update(idUser:any , modifierUser:any): Observable<any> {
+    return this.http.put(`${AUTH_API + 'modifierUser'}/${idUser}`, {
+      nom: modifierUser.nom,
+      passport: modifierUser.passport,
+      prenom: modifierUser.prenom,
+      email : modifierUser.email,
+      
+    }, this.httpOption);
   }
   
   findById(idUser: any): Observable<any> {

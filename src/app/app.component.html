@@ -1,16 +1,16 @@
 <div id="app">
   <nav class="navbar navbar-expand navbar-custom">
-      <img class="img" src="/assets/Logo.png" />
+      <img class="img" src="/assets/Logo.png">
     <ul class="navbar-nav " routerLinkActive="active">
 
       <li class="nav-item">
-        <a class="nav-link" routerLink="home">Home</a>
+        <a class="nav-link" routerLink="home">Accueil</a>
       </li>
       <li class="nav-item" *ngIf="showAdminBoard">
-        <a class="nav-link" routerLink="listeprofils">Liste Profiles</a>
+        <a class="nav-link" routerLink="listeprofils">Liste des Profils</a>
       </li>
       <li class="nav-item" *ngIf="showAdminBoard">
-        <a  class="nav-link" routerLink="ajout">Ajouter Profile</a>
+        <a  class="nav-link" routerLink="ajout">Ajouter un Profil</a>
       </li>
       <li class="nav-item" *ngIf="showCollaborateurBoard">
         <a class="nav-link" routerLink="miss">Demande de mission</a>
@@ -29,9 +29,6 @@
       </li>
       <li class="nav-item" *ngIf="showPaieBoard">
         <a class="nav-link" routerLink="totalNDF">Liste notes de frais</a>
-      </li>
-      <li class="nav-item" *ngIf="showAssistBoard">
-        <a class="nav-link" routerLink="admin">Reservations</a>
       </li>
     </ul>
 

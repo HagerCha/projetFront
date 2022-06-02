@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
       data => {
         this.data= data
         console.log('data',this.data)
-        console.log('melek',data.roles[0].name);
+        console.log('data1',data.roles[0].name);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
       },
